@@ -1,0 +1,4 @@
+.container {
+  background: var(--background-layout);
+  color: var(--text-color);
+}
