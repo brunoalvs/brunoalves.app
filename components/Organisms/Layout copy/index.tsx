@@ -1,14 +1,14 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import styles from "./Default.module.css";
+import { useRouter } from "next/router";
+import Link from "next/link";
+import styles from "./styles.module.css";
 
 interface ILayoutDefaultProps {
   theme: "light" | "dark";
   language: "en" | "pt";
 }
 
-const LayoutDefault: React.FC<ILayoutDefaultProps> = ({
+const Layout: React.FC<ILayoutDefaultProps> = ({
   children,
   theme,
   language,
@@ -56,4 +56,4 @@ const LayoutDefault: React.FC<ILayoutDefaultProps> = ({
   );
 };
 
-export default LayoutDefault;
+export default Layout;
