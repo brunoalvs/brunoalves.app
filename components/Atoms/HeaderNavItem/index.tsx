@@ -12,9 +12,9 @@ const HeaderNavItem: React.FC<{
 
   return (
     <Link href={href} as={href} locale={router.locale} passHref>
-      <StyledLink>
+      <StyledLink data-active={isActive}>
         {children}
-        {isActive && <span />}
+        <span />
       </StyledLink>
     </Link>
   );

@@ -14,28 +14,20 @@ export const StyledLink = styled.a`
     display: block;
     border-radius: 2px;
     background: var(--primary-color);
+    transform: scaleX(0);
+    transition: 0.2s ease-in;
+    transform-origin: left;
+  }
+
+  &[data-active="true"] > span {
+    background-color: var(--primary-color);
+    transform: scaleX(1);
+    transition-timing-function: ease-out;
+  }
+
+  &:hover > span {
+    transform: scaleX(1);
+    background-color: var(--primary-color);
+    opacity: 0.5;
   }
 `;
-
-// export const Container = styled(Link)``
-//   border: 1px dashed orangered;
-//   background: turquoise;
-
-//   a {
-//     font-size: 1.5rem;
-//     text-decoration: none;
-//     position: relative;
-
-//     &::before {
-//       content: "";
-//       position: absolute;
-//       top: 0;
-//       left: 0;
-//       width: 100%;
-//       height: 4px;
-//       display: block;
-//       border-radius: 2px;
-//       background: orangered;
-//     }
-//   }
-// `;
