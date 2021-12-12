@@ -13,7 +13,7 @@ export const Icon = styled(Image)`
   border: 1px dashed hotpink;
 `;
 export const Label = styled.span`
-  max-width: 4.5rem;
+  max-width: 4.7rem;
   color: var(--text-color);
   font-size: 0.8rem;
   opacity: 0.5;
