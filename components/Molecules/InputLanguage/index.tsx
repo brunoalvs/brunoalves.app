@@ -9,7 +9,6 @@ const InputLanguage = () => {
 
   const handleClick = (e: React.MouseEvent<HTMLInputElement>) => {
     const { value } = e.currentTarget;
-    const newLocale = value === "pt" ? "pt-BR" : value;
     const isPortuguese = value === "pt";
 
     if (isPortuguese) {
@@ -27,6 +26,7 @@ const InputLanguage = () => {
       <input
         type="checkbox"
         value={locale}
+        checked={locale === "pt" ? true : false}
         id="languageChange"
         onClick={(event) => handleClick(event)}
       />
