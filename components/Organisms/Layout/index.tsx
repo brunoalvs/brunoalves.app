@@ -5,6 +5,7 @@ import Head from "next/head";
 import { Container, TopHeader, Header, Content } from "./styled";
 import ToggleThemeButton from "../../Molecules/ToggleThemeButton";
 import InputLanguage from "../../Molecules/InputLanguage";
+import Logo from "../../Atoms/Logo";
 
 interface Props {
   children: React.ReactNode;
@@ -60,7 +61,9 @@ const Layout: React.FC<Props> = ({ children, theme, toggleTheme }) => {
           <ToggleThemeButton theme={theme} onClick={() => toggleTheme()} />
           <InputLanguage />
         </TopHeader>
-        <Header></Header>
+        <Header>
+          <Logo />
+        </Header>
         <Content>{children}</Content>
       </Container>
     </>
