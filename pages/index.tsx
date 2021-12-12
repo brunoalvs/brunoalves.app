@@ -2,7 +2,11 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+
 import Layout from "../components/Organisms/Layout";
+import Subtitle from "../components/Atoms/Typography/HeadingSubtitle";
+import HeadingTitle from "../components/Atoms/Typography/HeadingTitle";
+import Text from "../components/Atoms/Typography/Text";
 
 const Home: NextPage = () => {
   const { locale } = useRouter();
@@ -63,9 +67,9 @@ const Home: NextPage = () => {
       </Head>
 
       <Layout theme={theme} toggleTheme={toggleTheme}>
-        <h1>Main Content {locale}</h1>
-
-        <p>
+        <HeadingTitle>Main Page</HeadingTitle>
+        <Subtitle>This is the main page</Subtitle>
+        <Text>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit,{" "}
           <a href="http://google.com" target="_blank" rel="noopener noreferrer">
             Google
@@ -73,7 +77,7 @@ const Home: NextPage = () => {
           voluptate aut consectetur, facilis, ad adipisci ea non veritatis
           fugiat accusantium natus laudantium! In omnis, quidem repellat eveniet
           iusto fugit incidunt.
-        </p>
+        </Text>
       </Layout>
     </>
   );

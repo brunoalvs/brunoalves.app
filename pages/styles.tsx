@@ -56,7 +56,7 @@ export const GlobalStyle = createGlobalStyle`
     --background-navmenu: linear-gradient(171.9deg, #0A0813 0%, #000000 100%);
     --text-color: #fcfcfc;
     --primary-color: #8368EE;
-    --secondary-color:  ##68EEB6;
+    --secondary-color:  #68EEB6;
     --input-language-bg: #35C789;
     --input-language-dot: #fff;
   }
