@@ -9,6 +9,8 @@ const InputLanguage = () => {
   return (
     <Container>
       <Text>{locales ? locales[0] : ""}</Text>
+      <input type="checkbox" name="" id="languageChange" />
+      <label htmlFor="languageChange" />
       <Text>{locales ? locales[1] : ""}</Text>
     </Container>
   );
