@@ -7,11 +7,13 @@ import { Container, Icon, Label } from "./styles";
 
 interface Props {
   theme: "light" | "dark";
+  onClick: () => void;
 }
 
-const ToggleThemeButton: React.FC<Props> = ({ theme }) => {
+const ToggleThemeButton: React.FC<Props> = ({ theme, onClick }) => {
   const handleClick = () => {
     console.log("clicked");
+    onClick();
   };
 
   return (

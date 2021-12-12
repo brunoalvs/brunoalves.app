@@ -6,7 +6,13 @@ import { Container, TopHeader, Header, Content } from "./styled";
 import ToggleThemeButton from "../../Molecules/ToggleThemeButton";
 import InputLanguage from "../../Molecules/InputLanguage";
 
-const Layout: React.FC<{ theme: "dark" | "light" }> = ({ children, theme }) => {
+interface Props {
+  children: React.ReactNode;
+  theme: "dark" | "light";
+  toggleTheme: () => void;
+}
+
+const Layout: React.FC<Props> = ({ children, theme, toggleTheme }) => {
   const { locale } = useRouter();
 
   useEffect(() => {
@@ -51,7 +57,7 @@ const Layout: React.FC<{ theme: "dark" | "light" }> = ({ children, theme }) => {
 
       <Container data-theme={theme}>
         <TopHeader>
-          <ToggleThemeButton theme={theme} />
+          <ToggleThemeButton theme={theme} onClick={() => toggleTheme()} />
           <InputLanguage />
         </TopHeader>
         <Header></Header>

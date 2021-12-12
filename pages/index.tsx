@@ -43,6 +43,14 @@ const Home: NextPage = () => {
     }
   };
 
+  const toggleTheme = () => {
+    if (theme === "light") {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  };
+
   useEffect(() => {
     prefersColorScheme();
     getLanguage();
@@ -54,7 +62,7 @@ const Home: NextPage = () => {
         <title>brunoalves.app {locale}</title>
       </Head>
 
-      <Layout theme={theme}>
+      <Layout theme={theme} toggleTheme={toggleTheme}>
         <h1>Main Content {locale}</h1>
 
         <p>
