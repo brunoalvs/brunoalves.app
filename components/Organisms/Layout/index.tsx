@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 
-import { Container } from "./styles";
+import { Container, TopHeader, Header, Content } from "./styled";
+import ToggleThemeButton from "../../Molecules/ToggleThemeButton";
 
 const Layout: React.FC = ({ children }) => {
   const { locale } = useRouter();
@@ -47,7 +48,13 @@ const Layout: React.FC = ({ children }) => {
         />
       </Head>
 
-      <Container data-theme="dark">{children}</Container>
+      <Container data-theme="dark">
+        <TopHeader>
+          <ToggleThemeButton isLight={false} />
+        </TopHeader>
+        <Header></Header>
+        <Content>{children}</Content>
+      </Container>
     </>
   );
 };

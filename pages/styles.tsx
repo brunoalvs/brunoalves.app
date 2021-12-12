@@ -45,17 +45,20 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: inherit;
+    color: var(--primary-color);
+    font-style: italic;
   }
 
 
   [data-theme="dark"] {
-    --background-layout: linear-gradient(171.9deg, #1B1732 0%, #0A0813 100%);;
-    --background-topheader: ##000000;
-    --background-navmenu: linear-gradient(171.9deg, #0A0813 0%, #000000 100%);;
+    --background-layout: linear-gradient(171.9deg, #1B1732 0%, #0A0813 100%);
+    --background-topheader: #000000;
+    --background-navmenu: linear-gradient(171.9deg, #0A0813 0%, #000000 100%);
     --text-color: #fcfcfc;
     --primary-color: #8368EE;
     --secondary-color:  ##68EEB6;
+    --input-language-bg: #35C789;
+    --input-language-dot: #fff;
   }
 
   [data-theme="light"] {
@@ -65,5 +68,7 @@ export const GlobalStyle = createGlobalStyle`
     --text-color: #040716;
     --primary-color: #8368EE;
     --secondary-color:  #35C789;
+    --input-language-bg: #A3A9C2;
+    --input-language-dot: #DDE0EA;
   }
 `;
