@@ -9,7 +9,23 @@ import styles from "../styles/Home.module.css";
 const Home: NextPage = () => {
   const { locale } = useRouter();
 
+  const [language, setLanguage] = useState<"en" | "pt">("en");
   const [theme, setTheme] = useState<"light" | "dark">("light");
+
+  const getLanguage = () => {
+    console.log("getLanguage", locale);
+    if (locale === "pt-BR") {
+      setLanguage("pt");
+    } else if (locale === "en-US") {
+      setLanguage("en");
+    } else if (locale === "en") {
+      setLanguage("en");
+    } else if (locale === "pt") {
+      setLanguage("pt");
+    } else {
+      setLanguage("en");
+    }
+  };
 
   const prefersColorScheme = async () => {
     const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
@@ -29,15 +45,10 @@ const Home: NextPage = () => {
     }
   };
 
-  const checkLoadedPage = () => {
-    return document.readyState === "complete"
-      ? console.log("page loaded")
-      : console.log("page not loaded");
-  };
-
   useEffect(() => {
     prefersColorScheme();
-  });
+    getLanguage();
+  }, [language]);
 
   return (
     <div>
@@ -47,8 +58,8 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <LayoutDefault theme={theme}>
-        <h1>Main Content</h1>
+      <LayoutDefault theme={theme} language={language}>
+        <h1>Main Content {locale}</h1>
 
         <p>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit,
