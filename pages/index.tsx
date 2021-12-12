@@ -54,7 +54,7 @@ const Home: NextPage = () => {
         <title>brunoalves.app {locale}</title>
       </Head>
 
-      <Layout>
+      <Layout theme={theme}>
         <h1>Main Content {locale}</h1>
 
         <p>

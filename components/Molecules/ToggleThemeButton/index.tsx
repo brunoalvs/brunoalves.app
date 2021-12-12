@@ -6,18 +6,20 @@ import dayIcon from "../../../public/icons/day.svg";
 import { Container, Icon, Label } from "./styles";
 
 interface Props {
-  isLight: boolean;
+  theme: "light" | "dark";
 }
 
-const ToggleThemeButton: React.FC<Props> = ({ isLight }) => {
+const ToggleThemeButton: React.FC<Props> = ({ theme }) => {
   const handleClick = () => {
     console.log("clicked");
   };
 
   return (
     <Container onClick={() => handleClick()}>
-      <Icon src={isLight ? nightIcon : dayIcon} alt="day" />
-      <Label>{isLight ? "Turn on Dark Mode" : "Turn on Light Mode"}</Label>
+      <Icon src={theme === "light" ? nightIcon : dayIcon} alt="day" />
+      <Label>
+        {theme === "light" ? "Turn on Dark Mode" : "Turn on Light Mode"}
+      </Label>
     </Container>
   );
 };
