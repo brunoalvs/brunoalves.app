@@ -46,7 +46,6 @@ export const GlobalStyle = createGlobalStyle`
 
   a {
     color: var(--primary-color);
-    font-style: italic;
   }
 
 

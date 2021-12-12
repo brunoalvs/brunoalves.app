@@ -2,10 +2,11 @@ import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 
-import { Container, TopHeader, Header, Content } from "./styled";
+import { Container, TopHeader, Content } from "./styled";
 import ToggleThemeButton from "../../Molecules/ToggleThemeButton";
 import InputLanguage from "../../Molecules/InputLanguage";
-import Logo from "../../Atoms/Logo";
+
+import HeaderNavigation from "../../Molecules/HeaderNavigation";
 
 interface Props {
   children: React.ReactNode;
@@ -61,9 +62,7 @@ const Layout: React.FC<Props> = ({ children, theme, toggleTheme }) => {
           <ToggleThemeButton theme={theme} onClick={() => toggleTheme()} />
           <InputLanguage />
         </TopHeader>
-        <Header>
-          <Logo />
-        </Header>
+        <HeaderNavigation />
         <Content>{children}</Content>
       </Container>
     </>
