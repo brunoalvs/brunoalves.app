@@ -6,11 +6,11 @@ export const Container = styled.header`
   height: 60px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 1.125rem;
 
   @media (min-width: 768px) {
     height: 100px;
-    justify-content: space-between;
     padding: 2rem 1.25rem;
   }
 `;
@@ -22,7 +22,15 @@ export const Navigation = styled.nav`
     color: var(--text-color);
   }
 
+  @media (max-width: 768px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+  }
+
   @media (min-width: 768px) {
+    position: relative;
     grid-template-columns: repeat(5, max-content);
     gap: 1.875rem;
   }

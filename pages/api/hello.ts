@@ -73,3 +73,7 @@ export default function handler(
 ) {
   res.status(200).json(content);
 }
+
+const handle = (req: NextApiRequest, res: NextApiResponse<Data>) => {
+  res.status(200).json(content);
+};

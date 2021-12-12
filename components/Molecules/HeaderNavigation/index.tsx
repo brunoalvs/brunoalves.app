@@ -1,7 +1,10 @@
-import { useRouter } from "next/router";
 import React, { useEffect } from "react";
+import { useRouter } from "next/router";
+
 import HeaderNavItem from "../../Atoms/HeaderNavItem";
 import Logo from "../../Atoms/Logo";
+import MenuButtonMobile from "../../Atoms/MenuButtonMobile";
+
 import { Container, Navigation } from "./styled";
 
 const HeaderNavigation: React.FC = () => {
@@ -66,6 +69,8 @@ const HeaderNavigation: React.FC = () => {
   return (
     <Container>
       <Logo />
+
+      <MenuButtonMobile />
 
       <Navigation>
         {navItems[language].map((item, index) => (
