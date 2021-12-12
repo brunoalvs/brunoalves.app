@@ -26,7 +26,7 @@ const InputLanguage = () => {
       <input
         type="checkbox"
         value={locale}
-        checked={locale === "pt" ? true : false}
+        defaultChecked={locale === "pt" ? true : false}
         id="languageChange"
         onClick={(event) => handleClick(event)}
       />
