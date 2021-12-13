@@ -16,11 +16,10 @@ export const TopHeader = styled.header`
 
 export const Content = styled.section`
   width: 100%;
-  height: calc(100vh - 110px);
+  height: calc(100vh - 150px);
   padding: 1rem;
 
   @media (min-width: 768px) {
-    height: calc(100vh - 150px);
     padding: 2rem 5rem;
   }
 `;

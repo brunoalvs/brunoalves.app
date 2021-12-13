@@ -9,7 +9,11 @@ const MenuButtonMobile: React.FC = ({}) => {
   };
 
   return (
-    <Container data-active={isActive} onClick={() => handleClick()}>
+    <Container
+      aria-label="Open navigation menu"
+      data-active={isActive}
+      onClick={() => handleClick()}
+    >
       <span />
       <span />
       <span />
