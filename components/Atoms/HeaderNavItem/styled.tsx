@@ -17,17 +17,19 @@ export const StyledLink = styled.a`
     transform: scaleX(0);
     transition: 0.2s ease-in;
     transform-origin: left;
+    opacity: 0;
   }
 
   &[data-active="true"] > span {
     background-color: var(--primary-color);
     transform: scaleX(1);
     transition-timing-function: ease-out;
+    opacity: 1;
   }
 
   &:hover > span {
-    transform: scaleX(1);
     background-color: var(--primary-color);
-    opacity: 0.5;
+    opacity: 1;
+    transform: scaleX(1);
   }
 `;

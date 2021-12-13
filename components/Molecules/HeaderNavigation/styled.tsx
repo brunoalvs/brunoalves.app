@@ -3,14 +3,13 @@ import styled from "styled-components";
 export const Container = styled.header`
   border: 1px dashed slateblue;
   width: 100%;
-  height: 60px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1.125rem;
 
   @media (min-width: 768px) {
-    height: 100px;
     padding: 2rem 1.25rem;
   }
 `;
