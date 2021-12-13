@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.header`
-  border: 1px dashed slateblue;
   width: 100%;
   height: 100px;
   display: flex;
