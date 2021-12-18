@@ -1,11 +1,14 @@
 import React from "react";
-import TemplatePortfolio from "../components/Templates/Portfolio";
+import Layout from "../components/Organisms/Layout";
+import HeadingTitle from "../components/Atoms/Typography/HeadingTitle";
 
 const Portfolio: React.FC = () => {
   return (
-    <TemplatePortfolio>
-      <h1>Portfolio</h1>
-    </TemplatePortfolio>
+    <>
+      <Layout>
+        <HeadingTitle>Portfolio</HeadingTitle>
+      </Layout>
+    </>
   );
 };
 

@@ -4,20 +4,19 @@ import { useRouter } from "next/router";
 import { Container, Text } from "./styled";
 
 const InputLanguage = () => {
-  const router = useRouter();
-  const { locale, locales } = useRouter();
+  const { locale, locales, push, pathname } = useRouter();
 
   const handleClick = (e: React.MouseEvent<HTMLInputElement>) => {
     const { value } = e.currentTarget;
-    const isPortuguese = value === "pt";
 
-    if (isPortuguese) {
-      router.push("/", "/en", { locale: "en" }); // Redirect to home page
-    } else {
-      router.push("/", "/pt", { locale: "pt" }); // Redirect to home page
+    switch (value) {
+      case "pt":
+        push(pathname, "/en", { locale: "en" });
+        break;
+      default:
+        push(pathname, "/pt", { locale: "pt" });
+        break;
     }
-
-    console.log("click", value);
   };
 
   return (

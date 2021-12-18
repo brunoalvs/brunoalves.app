@@ -1,29 +1,71 @@
-import React, { useEffect } from "react";
-import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 import { Container, TopHeader, Content } from "./styled";
 import ToggleThemeButton from "../../Molecules/ToggleThemeButton";
 import InputLanguage from "../../Molecules/InputLanguage";
-
 import HeaderNavigation from "../../Molecules/HeaderNavigation";
 
 interface Props {
   children: React.ReactNode;
-  theme: "dark" | "light";
-  toggleTheme: () => void;
+  title?: string;
 }
 
-const Layout: React.FC<Props> = ({ children, theme, toggleTheme }) => {
+const Layout: React.FC<Props> = ({ children, title = "brunoalves.app" }) => {
   const { locale } = useRouter();
+  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [language, setLanguage] = useState<"en" | "pt">("en");
+
+  const prefersColorScheme = async () => {
+    const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
+
+    prefersDarkMode.addEventListener("change", (e) => {
+      if (e.matches) {
+        setTheme("dark");
+      } else {
+        setTheme("light");
+      }
+    });
+
+    if (prefersDarkMode.matches) {
+      return setTheme("dark");
+    } else {
+      return setTheme("light");
+    }
+  };
+
+  const toggleTheme = () => {
+    if (theme === "light") {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  };
+
+  const getLanguage = () => {
+    if (locale === "pt-BR") {
+      setLanguage("pt");
+    } else if (locale === "en-US") {
+      setLanguage("en");
+    } else if (locale === "en") {
+      setLanguage("en");
+    } else if (locale === "pt") {
+      setLanguage("pt");
+    } else {
+      setLanguage("en");
+    }
+  };
 
   useEffect(() => {
-    console.log("locale is ", locale);
-  }, [locale]);
+    prefersColorScheme();
+    getLanguage();
+  }, [language]);
 
   return (
     <>
       <Head>
+        <title>{title}</title>
         <meta
           name="description"
           content="Portfolio of Bruno Alves, a Front End Developer based on Brazil."
