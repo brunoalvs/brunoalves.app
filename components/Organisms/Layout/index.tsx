@@ -98,7 +98,7 @@ const Layout: React.FC<Props> = ({ children, title = "brunoalves.app" }) => {
       <themeContext.Provider value={{ appTheme: theme, updateTheme: setTheme }}>
         <Container data-theme={theme}>
           <TopHeader>
-            <ToggleThemeButton theme={theme} onClick={() => toggleTheme()} />
+            <ToggleThemeButton />
             <InputLanguage />
           </TopHeader>
           <HeaderNavigation />

@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from "react";
 
 import { useRouter } from "next/router";
+import themeContext, { useThemeApp } from "../../../contexts/theme";
 
 import nightIcon from "../../../public/icons/night.svg";
 import dayIcon from "../../../public/icons/day.svg";
 
 import { Container, Icon, Label } from "./styles";
 
-interface Props {
-  theme: null | "light" | "dark";
-  onClick: () => void;
-}
-
-const ToggleThemeButton: React.FC<Props> = ({ theme, onClick }) => {
+const ToggleThemeButton: React.FC = () => {
   const { locale } = useRouter();
+  const { appTheme: theme, updateTheme } = useThemeApp();
+
   const [content, setContent] = useState({
     en: {
       turnDark: "Turn on Night Mode",
@@ -27,8 +25,8 @@ const ToggleThemeButton: React.FC<Props> = ({ theme, onClick }) => {
   const [language, setLanguage] = useState<"pt" | "en">("en");
 
   const handleClick = () => {
+    updateTheme(theme === "light" ? "dark" : "light");
     console.log("clicked");
-    onClick();
   };
 
   useEffect(() => {

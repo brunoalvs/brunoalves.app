@@ -5,9 +5,11 @@ type ThemeContextType = {
   updateTheme: Dispatch<React.SetStateAction<null | "light" | "dark">>;
 };
 
-const themeContext = React.createContext<ThemeContextType>({
+const ThemeContext = React.createContext<ThemeContextType>({
   appTheme: "light",
   updateTheme: () => {},
 });
 
-export default themeContext;
+export default ThemeContext;
+
+export const useThemeApp = () => React.useContext(ThemeContext);
