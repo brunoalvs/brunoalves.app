@@ -8,7 +8,7 @@ import dayIcon from "../../../public/icons/day.svg";
 import { Container, Icon, Label } from "./styles";
 
 interface Props {
-  theme: "light" | "dark";
+  theme: null | "light" | "dark";
   onClick: () => void;
 }
 

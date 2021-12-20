@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import themeContext from "../../../contexts/theme";
 
 import { Container, TopHeader, Content } from "./styled";
 import ToggleThemeButton from "../../Molecules/ToggleThemeButton";
@@ -8,25 +9,26 @@ import InputLanguage from "../../Molecules/InputLanguage";
 import HeaderNavigation from "../../Molecules/HeaderNavigation";
 
 interface Props {
-  children: React.ReactNode;
   title?: string;
 }
 
 const Layout: React.FC<Props> = ({ children, title = "brunoalves.app" }) => {
-  const { locale } = useRouter();
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const { locale, locales } = useRouter();
+  const [theme, setTheme] = useState<null | "light" | "dark">(null);
   const [language, setLanguage] = useState<"en" | "pt">("en");
 
   const prefersColorScheme = async () => {
     const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
 
-    prefersDarkMode.addEventListener("change", (e) => {
-      if (e.matches) {
-        setTheme("dark");
-      } else {
-        setTheme("light");
-      }
-    });
+    if (theme === null) {
+      prefersDarkMode.addEventListener("change", (e) => {
+        if (e.matches) {
+          setTheme("dark");
+        } else {
+          setTheme("light");
+        }
+      });
+    }
 
     if (prefersDarkMode.matches) {
       return setTheme("dark");
@@ -44,13 +46,7 @@ const Layout: React.FC<Props> = ({ children, title = "brunoalves.app" }) => {
   };
 
   const getLanguage = () => {
-    if (locale === "pt-BR") {
-      setLanguage("pt");
-    } else if (locale === "en-US") {
-      setLanguage("en");
-    } else if (locale === "en") {
-      setLanguage("en");
-    } else if (locale === "pt") {
+    if (locale === "pt") {
       setLanguage("pt");
     } else {
       setLanguage("en");
@@ -99,14 +95,16 @@ const Layout: React.FC<Props> = ({ children, title = "brunoalves.app" }) => {
         />
       </Head>
 
-      <Container data-theme={theme}>
-        <TopHeader>
-          <ToggleThemeButton theme={theme} onClick={() => toggleTheme()} />
-          <InputLanguage />
-        </TopHeader>
-        <HeaderNavigation />
-        <Content>{children}</Content>
-      </Container>
+      <themeContext.Provider value={{ appTheme: theme, updateTheme: setTheme }}>
+        <Container data-theme={theme}>
+          <TopHeader>
+            <ToggleThemeButton theme={theme} onClick={() => toggleTheme()} />
+            <InputLanguage />
+          </TopHeader>
+          <HeaderNavigation />
+          <Content>{children}</Content>
+        </Container>
+      </themeContext.Provider>
     </>
   );
 };
