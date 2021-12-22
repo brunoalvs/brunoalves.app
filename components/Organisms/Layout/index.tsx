@@ -18,11 +18,8 @@ const Layout: React.FC<Props> = ({ children, title = "brunoalves.app" }) => {
   const [language, setLanguage] = useState<"en" | "pt">("en");
 
   const prefersColorScheme = async () => {
-    console.log("theme", theme);
     const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
-    console.log("prefersDarkMode", prefersDarkMode.matches);
     const themeByUser = localStorage.getItem("darkMode");
-    console.log("themeByUser", themeByUser);
 
     if (
       (prefersDarkMode.matches && themeByUser === null) ||
