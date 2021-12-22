@@ -1,8 +1,8 @@
 import React, { Dispatch } from "react";
 
 type ThemeContextType = {
-  appTheme: null | "light" | "dark";
-  updateTheme: Dispatch<React.SetStateAction<null | "light" | "dark">>;
+  appTheme: "light" | "dark";
+  updateTheme: Dispatch<React.SetStateAction<"light" | "dark">>;
 };
 
 export const ThemeContext = React.createContext<ThemeContextType>({
@@ -11,9 +11,7 @@ export const ThemeContext = React.createContext<ThemeContextType>({
 });
 
 export const ThemeProvider: React.FC = ({ children }) => {
-  const [appTheme, setAppTheme] = React.useState<null | "light" | "dark">(
-    "light"
-  );
+  const [appTheme, setAppTheme] = React.useState<"light" | "dark">("light");
 
   return (
     <ThemeContext.Provider

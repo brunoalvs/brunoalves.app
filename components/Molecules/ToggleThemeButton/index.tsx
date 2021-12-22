@@ -25,7 +25,13 @@ const ToggleThemeButton: React.FC = () => {
   const [language, setLanguage] = useState<"pt" | "en">("en");
 
   const handleClick = () => {
-    updateTheme(theme === "light" ? "dark" : "light");
+    if (theme === "light") {
+      updateTheme("dark");
+      localStorage.setItem("darkMode", "true");
+    } else {
+      updateTheme("light");
+      localStorage.setItem("darkMode", "false");
+    }
   };
 
   useEffect(() => {

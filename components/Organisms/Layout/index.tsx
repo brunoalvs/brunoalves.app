@@ -13,28 +13,33 @@ interface Props {
 }
 
 const Layout: React.FC<Props> = ({ children, title = "brunoalves.app" }) => {
-  const { locale, locales } = useRouter();
-  const [theme, setTheme] = useState<null | "light" | "dark">(null);
+  const { locale } = useRouter();
+  const [theme, setTheme] = useState<"light" | "dark">("light");
   const [language, setLanguage] = useState<"en" | "pt">("en");
 
   const prefersColorScheme = async () => {
+    console.log("theme", theme);
     const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
+    console.log("prefersDarkMode", prefersDarkMode.matches);
+    const themeByUser = localStorage.getItem("darkMode");
+    console.log("themeByUser", themeByUser);
 
-    if (theme === null) {
-      prefersDarkMode.addEventListener("change", (e) => {
-        if (e.matches) {
-          setTheme("dark");
-        } else {
-          setTheme("light");
-        }
-      });
+    if (
+      (prefersDarkMode.matches && themeByUser === null) ||
+      themeByUser === "true"
+    ) {
+      setTheme("dark");
     }
 
-    if (prefersDarkMode.matches) {
-      return setTheme("dark");
-    } else {
-      return setTheme("light");
-    }
+    prefersDarkMode.addEventListener("change", (e) => {
+      if (e.matches) {
+        setTheme("dark");
+        localStorage.setItem("darkMode", "true");
+      } else {
+        setTheme("light");
+        localStorage.setItem("darkMode", "false");
+      }
+    });
   };
 
   const getLanguage = () => {
