@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import themeContext from "../../../contexts/theme";
+import { ThemeContext } from "../../../contexts/theme";
 
 import { Container, TopHeader, Content } from "./styled";
 import ToggleThemeButton from "../../Molecules/ToggleThemeButton";
@@ -34,14 +34,6 @@ const Layout: React.FC<Props> = ({ children, title = "brunoalves.app" }) => {
       return setTheme("dark");
     } else {
       return setTheme("light");
-    }
-  };
-
-  const toggleTheme = () => {
-    if (theme === "light") {
-      setTheme("dark");
-    } else {
-      setTheme("light");
     }
   };
 
@@ -95,7 +87,7 @@ const Layout: React.FC<Props> = ({ children, title = "brunoalves.app" }) => {
         />
       </Head>
 
-      <themeContext.Provider value={{ appTheme: theme, updateTheme: setTheme }}>
+      <ThemeContext.Provider value={{ appTheme: theme, updateTheme: setTheme }}>
         <Container data-theme={theme}>
           <TopHeader>
             <ToggleThemeButton />
@@ -104,7 +96,7 @@ const Layout: React.FC<Props> = ({ children, title = "brunoalves.app" }) => {
           <HeaderNavigation />
           <Content>{children}</Content>
         </Container>
-      </themeContext.Provider>
+      </ThemeContext.Provider>
     </>
   );
 };

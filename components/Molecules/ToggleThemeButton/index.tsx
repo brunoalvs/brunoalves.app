@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { useRouter } from "next/router";
-import themeContext, { useThemeApp } from "../../../contexts/theme";
+import { ThemeContext, useThemeApp } from "../../../contexts/theme";
 
 import nightIcon from "../../../public/icons/night.svg";
 import dayIcon from "../../../public/icons/day.svg";
@@ -26,7 +26,6 @@ const ToggleThemeButton: React.FC = () => {
 
   const handleClick = () => {
     updateTheme(theme === "light" ? "dark" : "light");
-    console.log("clicked");
   };
 
   useEffect(() => {
