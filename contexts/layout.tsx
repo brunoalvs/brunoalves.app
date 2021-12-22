@@ -1,21 +1,21 @@
 import { createContext, FC, useState } from "react";
 
 type LayoutContextType = {
-  menuOpen: boolean;
+  menuIsOpen: boolean;
   toggleMenu: () => void;
 };
 
 export const LayoutContext = createContext<LayoutContextType>({
-  menuOpen: false,
+  menuIsOpen: false,
   toggleMenu: () => {},
 });
 
 export const LayoutProvider: FC = ({ children }) => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const toggleMenu = () => setMenuIsOpen(!menuIsOpen);
 
   return (
-    <LayoutContext.Provider value={{ menuOpen, toggleMenu }}>
+    <LayoutContext.Provider value={{ menuIsOpen, toggleMenu }}>
       {children}
     </LayoutContext.Provider>
   );

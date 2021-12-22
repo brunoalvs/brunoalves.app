@@ -7,6 +7,7 @@ import { Container, TopHeader, Content } from "./styled";
 import ToggleThemeButton from "../../Molecules/ToggleThemeButton";
 import InputLanguage from "../../Molecules/InputLanguage";
 import HeaderNavigation from "../../Molecules/HeaderNavigation";
+import { LayoutProvider } from "../../../contexts/layout";
 
 interface Props {
   title?: string;
@@ -89,16 +90,20 @@ const Layout: React.FC<Props> = ({ children, title = "brunoalves.app" }) => {
         />
       </Head>
 
-      <ThemeContext.Provider value={{ appTheme: theme, updateTheme: setTheme }}>
-        <Container data-theme={theme}>
-          <TopHeader>
-            <ToggleThemeButton />
-            <InputLanguage />
-          </TopHeader>
-          <HeaderNavigation />
-          <Content>{children}</Content>
-        </Container>
-      </ThemeContext.Provider>
+      <LayoutProvider>
+        <ThemeContext.Provider
+          value={{ appTheme: theme, updateTheme: setTheme }}
+        >
+          <Container data-theme={theme}>
+            <TopHeader>
+              <ToggleThemeButton />
+              <InputLanguage />
+            </TopHeader>
+            <HeaderNavigation />
+            <Content>{children}</Content>
+          </Container>
+        </ThemeContext.Provider>
+      </LayoutProvider>
     </>
   );
 };

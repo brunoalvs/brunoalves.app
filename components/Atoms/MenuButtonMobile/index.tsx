@@ -1,17 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Container } from "./styled";
 
+import { LayoutContext } from "../../../contexts/layout";
+
 const MenuButtonMobile: React.FC = ({}) => {
-  const [isActive, setIsActive] = useState(false);
+  const { menuIsOpen, toggleMenu } = useContext(LayoutContext);
 
   const handleClick = () => {
-    setIsActive(!isActive);
+    toggleMenu();
+    console.log(menuIsOpen);
   };
 
   return (
     <Container
       aria-label="Open navigation menu"
-      data-active={isActive}
+      data-active={menuIsOpen}
       onClick={() => handleClick()}
     >
       <span />
