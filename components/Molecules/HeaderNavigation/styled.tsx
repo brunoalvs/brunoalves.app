@@ -37,11 +37,12 @@ export const Navigation = styled.nav`
     align-items: center;
     justify-content: center;
 
-    position: absolute;
+    position: fixed;
     top: 50px;
     left: 0;
 
-    transition: all 0.2s ease;
+    transform-origin: right;
+    transition: all 0.25s ease;
 
     > a {
       margin: 1rem 0;
@@ -50,11 +51,23 @@ export const Navigation = styled.nav`
     &[data-active="true"] {
       opacity: 1;
       visibility: visible;
+      transform: translateX(0);
+
+      > a {
+        opacity: 1;
+        transition: opacity 1s ease;
+      }
     }
 
     &[data-active="false"] {
       opacity: 0;
       visibility: hidden;
+      transform: translateX(100%);
+
+      > a {
+        opacity: 0;
+        transition: opacity 0.2s ease;
+      }
     }
   }
 `;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledLink = styled.a`
-  font-size: 1.5rem;
+  font-size: 2rem;
   text-decoration: none;
   position: relative;
 
@@ -31,5 +31,9 @@ export const StyledLink = styled.a`
     background-color: var(--primary-color);
     opacity: 1;
     transform: scaleX(1);
+  }
+
+  @media (min-width: 768px) {
+    font-size: 1.5rem;
   }
 `;
