@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import { useRouter } from "next/router";
 
 import Layout from "../components/Organisms/Layout";
 import Subtitle from "../components/Atoms/Typography/HeadingSubtitle";
@@ -6,10 +7,11 @@ import HeadingTitle from "../components/Atoms/Typography/HeadingTitle";
 import Text from "../components/Atoms/Typography/Text";
 
 const Home: NextPage = () => {
+  const { locale } = useRouter();
   return (
     <>
       <Layout title="Home | Bruno Alves - Desenvolvedor Front End">
-        <HeadingTitle>Main Page</HeadingTitle>
+        <HeadingTitle>Main Page {locale}</HeadingTitle>
         <Subtitle>This is the main page</Subtitle>
         <Text>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit,{" "}

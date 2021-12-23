@@ -8,7 +8,6 @@ const MenuButtonMobile: React.FC = ({}) => {
 
   const handleClick = () => {
     toggleMenu();
-    console.log(menuIsOpen);
   };
 
   return (

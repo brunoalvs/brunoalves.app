@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import { useRouter } from "next/router";
-import { ThemeContext, useThemeApp } from "../../../contexts/theme";
+// import { ThemeContext, useThemeApp } from "../../../contexts/theme";
+import { LayoutContext } from "../../../contexts/layout";
 
 import nightIcon from "../../../public/icons/night.svg";
 import dayIcon from "../../../public/icons/day.svg";
@@ -10,9 +11,9 @@ import { Container, Icon, Label } from "./styles";
 
 const ToggleThemeButton: React.FC = () => {
   const { locale } = useRouter();
-  const { appTheme: theme, updateTheme } = useThemeApp();
+  const { darkMode, toggleDarkMode } = useContext(LayoutContext);
 
-  const [content, setContent] = useState({
+  const [content] = useState({
     en: {
       turnDark: "Turn on Night Mode",
       turnLight: "Turn on Day Mode",
@@ -24,16 +25,6 @@ const ToggleThemeButton: React.FC = () => {
   });
   const [language, setLanguage] = useState<"pt" | "en">("en");
 
-  const handleClick = () => {
-    if (theme === "light") {
-      updateTheme("dark");
-      localStorage.setItem("darkMode", "true");
-    } else {
-      updateTheme("light");
-      localStorage.setItem("darkMode", "false");
-    }
-  };
-
   useEffect(() => {
     if (locale !== undefined) {
       locale === "pt" ? setLanguage("pt") : setLanguage("en");
@@ -41,12 +32,10 @@ const ToggleThemeButton: React.FC = () => {
   }, [locale]);
 
   return (
-    <Container onClick={() => handleClick()}>
-      <Icon src={theme === "light" ? nightIcon : dayIcon} alt="day" />
+    <Container onClick={() => toggleDarkMode()}>
+      <Icon src={darkMode ? dayIcon : nightIcon} aria-hidden />
       <Label>
-        {theme === "light"
-          ? content[language].turnDark
-          : content[language].turnLight}
+        {darkMode ? content[language].turnLight : content[language].turnDark}
       </Label>
     </Container>
   );
