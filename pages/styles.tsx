@@ -46,7 +46,6 @@ export const GlobalStyle = createGlobalStyle`
 
   a {
     color: var(--primary-color);
-    font-style: italic;
   }
 
 
@@ -70,5 +69,10 @@ export const GlobalStyle = createGlobalStyle`
     --secondary-color:  #35C789;
     --input-language-bg: #A3A9C2;
     --input-language-dot: #DDE0EA;
+  }
+
+  div#__next {
+    height: 100vh;
+    overflow: hidden;
   }
 `;

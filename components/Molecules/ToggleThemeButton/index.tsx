@@ -1,20 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import { useRouter } from "next/router";
+// import { ThemeContext, useThemeApp } from "../../../contexts/theme";
+import { LayoutContext } from "../../../contexts/layout";
 
 import nightIcon from "../../../public/icons/night.svg";
 import dayIcon from "../../../public/icons/day.svg";
 
 import { Container, Icon, Label } from "./styles";
 
-interface Props {
-  theme: "light" | "dark";
-  onClick: () => void;
-}
-
-const ToggleThemeButton: React.FC<Props> = ({ theme, onClick }) => {
+const ToggleThemeButton: React.FC = () => {
   const { locale } = useRouter();
-  const [content, setContent] = useState({
+  const { darkMode, toggleDarkMode } = useContext(LayoutContext);
+
+  const [content] = useState({
     en: {
       turnDark: "Turn on Night Mode",
       turnLight: "Turn on Day Mode",
@@ -26,11 +25,6 @@ const ToggleThemeButton: React.FC<Props> = ({ theme, onClick }) => {
   });
   const [language, setLanguage] = useState<"pt" | "en">("en");
 
-  const handleClick = () => {
-    console.log("clicked");
-    onClick();
-  };
-
   useEffect(() => {
     if (locale !== undefined) {
       locale === "pt" ? setLanguage("pt") : setLanguage("en");
@@ -38,12 +32,10 @@ const ToggleThemeButton: React.FC<Props> = ({ theme, onClick }) => {
   }, [locale]);
 
   return (
-    <Container onClick={() => handleClick()}>
-      <Icon src={theme === "light" ? nightIcon : dayIcon} alt="day" />
+    <Container onClick={() => toggleDarkMode()}>
+      <Icon src={darkMode ? dayIcon : nightIcon} aria-hidden />
       <Label>
-        {theme === "light"
-          ? content[language].turnDark
-          : content[language].turnLight}
+        {darkMode ? content[language].turnLight : content[language].turnDark}
       </Label>
     </Container>
   );

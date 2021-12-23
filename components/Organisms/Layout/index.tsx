@@ -1,28 +1,38 @@
-import React, { useEffect } from "react";
-import { useRouter } from "next/router";
+import React, { useContext, useEffect, useState } from "react";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
-import { Container, TopHeader, Header, Content } from "./styled";
+import { Container, TopHeader, Content } from "./styled";
 import ToggleThemeButton from "../../Molecules/ToggleThemeButton";
 import InputLanguage from "../../Molecules/InputLanguage";
-import Logo from "../../Atoms/Logo";
+import HeaderNavigation from "../../Molecules/HeaderNavigation";
+import { LayoutContext } from "../../../contexts/layout";
 
 interface Props {
-  children: React.ReactNode;
-  theme: "dark" | "light";
-  toggleTheme: () => void;
+  title?: string;
 }
 
-const Layout: React.FC<Props> = ({ children, theme, toggleTheme }) => {
+const Layout: React.FC<Props> = ({ children, title = "brunoalves.app" }) => {
   const { locale } = useRouter();
+  const { darkMode, menuIsOpen } = useContext(LayoutContext);
+  const [language, setLanguage] = useState<"en" | "pt">("en");
+
+  const getLanguage = () => {
+    if (locale === "pt") {
+      setLanguage("pt");
+    } else {
+      setLanguage("en");
+    }
+  };
 
   useEffect(() => {
-    console.log("locale is ", locale);
-  }, [locale]);
+    getLanguage();
+  }, [language]);
 
   return (
     <>
       <Head>
+        <title>{title}</title>
         <meta
           name="description"
           content="Portfolio of Bruno Alves, a Front End Developer based on Brazil."
@@ -56,14 +66,15 @@ const Layout: React.FC<Props> = ({ children, theme, toggleTheme }) => {
         />
       </Head>
 
-      <Container data-theme={theme}>
+      <Container
+        data-theme={darkMode ? "dark" : "light"}
+        data-menu={menuIsOpen}
+      >
         <TopHeader>
-          <ToggleThemeButton theme={theme} onClick={() => toggleTheme()} />
+          <ToggleThemeButton />
           <InputLanguage />
         </TopHeader>
-        <Header>
-          <Logo />
-        </Header>
+        <HeaderNavigation />
         <Content>{children}</Content>
       </Container>
     </>
