@@ -70,4 +70,9 @@ export const GlobalStyle = createGlobalStyle`
     --input-language-bg: #A3A9C2;
     --input-language-dot: #DDE0EA;
   }
+
+  div#__next {
+    height: 100vh;
+    overflow: hidden;
+  }
 `;

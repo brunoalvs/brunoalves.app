@@ -11,6 +11,7 @@ export const Container = styled.button`
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
+  z-index: 1;
 
   > span {
     display: block;

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { useRouter } from "next/router";
 
 import HeaderNavItem from "../../Atoms/HeaderNavItem";
@@ -6,8 +6,10 @@ import Logo from "../../Atoms/Logo";
 import MenuButtonMobile from "../../Atoms/MenuButtonMobile";
 
 import { Container, Navigation } from "./styled";
+import { LayoutContext } from "../../../contexts/layout";
 
 const HeaderNavigation: React.FC = () => {
+  const { menuIsOpen } = useContext(LayoutContext);
   const { locale } = useRouter();
   const [language, setLanguage] = React.useState<"pt" | "en">("en");
 
@@ -69,10 +71,8 @@ const HeaderNavigation: React.FC = () => {
   return (
     <Container>
       <Logo />
-
       <MenuButtonMobile />
-
-      <Navigation>
+      <Navigation data-active={menuIsOpen}>
         {navItems[language].map((item, index) => (
           <HeaderNavItem key={index} {...item}>
             {item.name}

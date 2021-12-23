@@ -3,6 +3,11 @@ import styled from "styled-components";
 export const Container = styled.main`
   background: var(--background-layout);
   color: var(--text-color);
+  overflow: auto;
+
+  &[data-menu="true"] {
+    overflow: hidden;
+  }
 `;
 
 export const TopHeader = styled.header`
@@ -12,6 +17,9 @@ export const TopHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   background: var(--background-topheader);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 `;
 
 export const Content = styled.section`

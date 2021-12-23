@@ -14,7 +14,7 @@ interface Props {
 
 const Layout: React.FC<Props> = ({ children, title = "brunoalves.app" }) => {
   const { locale } = useRouter();
-  const { darkMode } = useContext(LayoutContext);
+  const { darkMode, menuIsOpen } = useContext(LayoutContext);
   const [language, setLanguage] = useState<"en" | "pt">("en");
 
   const getLanguage = () => {
@@ -66,7 +66,10 @@ const Layout: React.FC<Props> = ({ children, title = "brunoalves.app" }) => {
         />
       </Head>
 
-      <Container data-theme={darkMode ? "dark" : "light"}>
+      <Container
+        data-theme={darkMode ? "dark" : "light"}
+        data-menu={menuIsOpen}
+      >
         <TopHeader>
           <ToggleThemeButton />
           <InputLanguage />
