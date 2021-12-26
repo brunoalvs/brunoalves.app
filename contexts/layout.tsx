@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { createContext, FC, useEffect, useState } from "react";
 
 type LayoutContextType = {
@@ -5,6 +6,7 @@ type LayoutContextType = {
   toggleMenu: () => void;
   darkMode: boolean;
   toggleDarkMode: () => void;
+  language: "en" | "pt";
 };
 
 export const LayoutContext = createContext<LayoutContextType>({
@@ -12,6 +14,7 @@ export const LayoutContext = createContext<LayoutContextType>({
   toggleMenu: () => {},
   darkMode: false,
   toggleDarkMode: () => {},
+  language: "en",
 });
 
 export const LayoutProvider: FC = ({ children }) => {
@@ -27,6 +30,20 @@ export const LayoutProvider: FC = ({ children }) => {
 
     setDarkMode(!darkMode);
   };
+  const { locale } = useRouter();
+  const [language, setLanguage] = useState<"en" | "pt">("en");
+
+  const getLanguage = () => {
+    if (locale === "pt") {
+      setLanguage("pt");
+    } else {
+      setLanguage("en");
+    }
+  };
+
+  useEffect(() => {
+    getLanguage();
+  }, [language, locale]);
 
   const prefersColorScheme = async () => {
     const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
@@ -58,7 +75,7 @@ export const LayoutProvider: FC = ({ children }) => {
 
   return (
     <LayoutContext.Provider
-      value={{ menuIsOpen, toggleMenu, darkMode, toggleDarkMode }}
+      value={{ menuIsOpen, toggleMenu, darkMode, toggleDarkMode, language }}
     >
       {children}
     </LayoutContext.Provider>

@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import Head from "next/head";
-import { useRouter } from "next/router";
 
 import { Container, TopHeader, Content } from "./styled";
 import ToggleThemeButton from "../../Molecules/ToggleThemeButton";
@@ -13,21 +12,7 @@ interface Props {
 }
 
 const Layout: React.FC<Props> = ({ children, title = "brunoalves.app" }) => {
-  const { locale } = useRouter();
   const { darkMode, menuIsOpen } = useContext(LayoutContext);
-  const [language, setLanguage] = useState<"en" | "pt">("en");
-
-  const getLanguage = () => {
-    if (locale === "pt") {
-      setLanguage("pt");
-    } else {
-      setLanguage("en");
-    }
-  };
-
-  useEffect(() => {
-    getLanguage();
-  }, [language]);
 
   return (
     <>
@@ -65,7 +50,6 @@ const Layout: React.FC<Props> = ({ children, title = "brunoalves.app" }) => {
           href="/favicon-16x16.png"
         />
       </Head>
-
       <Container
         data-theme={darkMode ? "dark" : "light"}
         data-menu={menuIsOpen}

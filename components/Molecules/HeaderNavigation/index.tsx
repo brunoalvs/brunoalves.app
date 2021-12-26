@@ -1,5 +1,4 @@
 import React, { useContext, useEffect } from "react";
-import { useRouter } from "next/router";
 
 import HeaderNavItem from "../../Atoms/HeaderNavItem";
 import Logo from "../../Atoms/Logo";
@@ -9,9 +8,7 @@ import { Container, Navigation } from "./styled";
 import { LayoutContext } from "../../../contexts/layout";
 
 const HeaderNavigation: React.FC = () => {
-  const { menuIsOpen } = useContext(LayoutContext);
-  const { locale } = useRouter();
-  const [language, setLanguage] = React.useState<"pt" | "en">("en");
+  const { menuIsOpen, language } = useContext(LayoutContext);
 
   const navItems = {
     en: [
@@ -59,14 +56,6 @@ const HeaderNavigation: React.FC = () => {
       },
     ],
   };
-
-  useEffect(() => {
-    if (locale === "en") {
-      setLanguage("en");
-    } else {
-      setLanguage("pt");
-    }
-  }, [locale]);
 
   return (
     <Container>

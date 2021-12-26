@@ -3,65 +3,65 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 type Data = {
   en: {
-    navItems: {
+    navigation: {
       name: string;
-      href: string;
+      url: string;
     }[];
   };
   pt: {
-    navItems: {
+    navigation: {
       name: string;
-      href: string;
+      url: string;
     }[];
   };
 };
 
 const content: Data = {
   en: {
-    navItems: [
+    navigation: [
       {
         name: "Home",
-        href: "/",
+        url: "/",
       },
       {
         name: "Portfolio",
-        href: "/portfolio",
+        url: "/portfolio",
       },
       {
         name: "About Me",
-        href: "/about",
+        url: "/about",
       },
       {
         name: "Skills",
-        href: "/skills",
+        url: "/skills",
       },
       {
         name: "Get in Touch",
-        href: "/contact",
+        url: "/contact",
       },
     ],
   },
   pt: {
-    navItems: [
+    navigation: [
       {
         name: "Inicio",
-        href: "/",
+        url: "/",
       },
       {
         name: "Portfólio",
-        href: "/portfolio",
+        url: "/portfolio",
       },
       {
         name: "Sobre Mim",
-        href: "/about",
+        url: "/about",
       },
       {
         name: "Habilidades",
-        href: "/skills",
+        url: "/skills",
       },
       {
         name: "Contato",
-        href: "/contact",
+        url: "/contact",
       },
     ],
   },
@@ -73,7 +73,3 @@ export default function handler(
 ) {
   res.status(200).json(content);
 }
-
-const handle = (req: NextApiRequest, res: NextApiResponse<Data>) => {
-  res.status(200).json(content);
-};
