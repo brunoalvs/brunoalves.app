@@ -17,7 +17,7 @@ const Layout: React.FC<Props> = ({ children, title = "brunoalves.app" }) => {
   return (
     <>
       <Head>
-        <title>{title}</title>
+        <title>{title} - brunoalves.app</title>
         <meta
           name="description"
           content="Portfolio of Bruno Alves, a Front End Developer based on Brazil."

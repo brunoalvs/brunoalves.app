@@ -21,7 +21,7 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <Layout title="Home | Bruno Alves - Desenvolvedor Front End">
+      <Layout title={data[language].title}>
         <HeadingTitle>{data[language].title}</HeadingTitle>
         <Subtitle>{data[language].subtitle}</Subtitle>
         <Text innerHTML={data[language].content} />
