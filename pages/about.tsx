@@ -10,25 +10,24 @@ import Text from "../components/Atoms/Typography/Text"
 import { LayoutContext } from "../contexts/layout"
 import { useContext } from "react"
 
-const Home: NextPage = () => {
+const About: NextPage = () => {
   const { language } = useContext(LayoutContext)
   const fetcher = async (url: string) =>
     await axios.get(url).then((res) => res.data)
-  const { data, error } = useSWR("/api/home", fetcher)
+  const { data, error } = useSWR("/api/about", fetcher)
 
   if (error) return <div>ERROR: Failed to load</div>
   if (!data) return <div>Loading...</div>
 
   return (
     <>
-      <Layout title="Home | Bruno Alves - Desenvolvedor Front End">
+      <Layout title={data[language].title}>
         <HeadingTitle>{data[language].title}</HeadingTitle>
         <Subtitle>{data[language].subtitle}</Subtitle>
         <Text innerHTML={data[language].content} />
-        <Text>{data[language].content.__html}</Text>
       </Layout>
     </>
   )
 }
 
-export default Home
+export default About
