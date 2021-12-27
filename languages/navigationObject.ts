@@ -1,15 +1,15 @@
 export interface InavigationList {
-  name: string;
-  url: string;
+  name: string
+  url: string
 }
 
 export interface InavigationObject {
   en: {
-    list: InavigationList[];
-  };
+    list: InavigationList[]
+  }
   pt: {
-    list: InavigationList[];
-  };
+    list: InavigationList[]
+  }
 }
 
 let navigationObject: InavigationObject = {
@@ -61,6 +61,6 @@ let navigationObject: InavigationObject = {
       },
     ],
   },
-};
+}
 
-export default navigationObject;
+export default navigationObject

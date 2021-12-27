@@ -1,23 +1,23 @@
-import React, { useContext } from "react";
-import Head from "next/head";
+import React, { useContext } from "react"
+import Head from "next/head"
 
-import { Container, TopHeader, Content } from "./styled";
-import ToggleThemeButton from "../../Molecules/ToggleThemeButton";
-import InputLanguage from "../../Molecules/InputLanguage";
-import HeaderNavigation from "../../Molecules/HeaderNavigation";
-import { LayoutContext } from "../../../contexts/layout";
+import { Container, TopHeader, Content } from "./styled"
+import ToggleThemeButton from "../../Molecules/ToggleThemeButton"
+import InputLanguage from "../../Molecules/InputLanguage"
+import HeaderNavigation from "../../Molecules/HeaderNavigation"
+import { LayoutContext } from "../../../contexts/layout"
 
 interface Props {
-  title?: string;
+  title?: string
 }
 
 const Layout: React.FC<Props> = ({ children, title = "brunoalves.app" }) => {
-  const { darkMode, menuIsOpen } = useContext(LayoutContext);
+  const { darkMode, menuIsOpen } = useContext(LayoutContext)
 
   return (
     <>
       <Head>
-        <title>{title}</title>
+        <title>{title} - brunoalves.app</title>
         <meta
           name="description"
           content="Portfolio of Bruno Alves, a Front End Developer based on Brazil."
@@ -62,7 +62,7 @@ const Layout: React.FC<Props> = ({ children, title = "brunoalves.app" }) => {
         <Content>{children}</Content>
       </Container>
     </>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

@@ -1,24 +1,10 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next"
+import { InavigationObject } from "../../languages/navigationObject"
 
-type Data = {
+const content: InavigationObject = {
   en: {
-    navigation: {
-      name: string
-      url: string
-    }[]
-  }
-  pt: {
-    navigation: {
-      name: string
-      url: string
-    }[]
-  }
-}
-
-const content: Data = {
-  en: {
-    navigation: [
+    list: [
       {
         name: "Home",
         url: "/",
@@ -42,7 +28,7 @@ const content: Data = {
     ],
   },
   pt: {
-    navigation: [
+    list: [
       {
         name: "Inicio",
         url: "/",
@@ -69,7 +55,7 @@ const content: Data = {
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse<InavigationObject>
 ) {
   res.status(200).json(content)
 }
