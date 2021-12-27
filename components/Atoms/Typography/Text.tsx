@@ -5,6 +5,11 @@ const Container = styled.p`
   color: var(--text-color);
   font-size: 1.5rem;
   line-height: 160%;
+
+  > strong {
+    color: var(--primary-color);
+    font-weight: normal;
+  }
 `
 
 interface Props {
