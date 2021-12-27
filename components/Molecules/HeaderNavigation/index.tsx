@@ -11,7 +11,7 @@ import { LayoutContext } from "../../../contexts/layout"
 import { InavigationList } from "../../../languages/navigationObject"
 
 const HeaderNavigation: React.FC = () => {
-  const { menuIsOpen, language } = useContext(LayoutContext)
+  const { menuIsOpen, language, toggleMenu } = useContext(LayoutContext)
 
   const fetcher = async (url: string) =>
     await axios.get(url).then((res) => res.data)
@@ -27,7 +27,7 @@ const HeaderNavigation: React.FC = () => {
       <MenuButtonMobile />
       <Navigation data-active={menuIsOpen}>
         {data[language].list.map((item: InavigationList, index: string) => (
-          <HeaderNavItem key={index} href={item.url}>
+          <HeaderNavItem onClick={toggleMenu} key={index} href={item.url}>
             {item.name}
           </HeaderNavItem>
         ))}
