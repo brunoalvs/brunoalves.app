@@ -8,7 +8,7 @@ import MenuButtonMobile from "../../Atoms/MenuButtonMobile"
 
 import { Container, Navigation } from "./styled"
 import { LayoutContext } from "../../../contexts/layout"
-import { InavigationList } from "../../../languages/navigationObject"
+import { INavigationObject } from "../../../pages/api/navigation"
 
 const HeaderNavigation: React.FC = () => {
   const { menuIsOpen, language, toggleMenu } = useContext(LayoutContext)
@@ -26,7 +26,7 @@ const HeaderNavigation: React.FC = () => {
       <Logo />
       <MenuButtonMobile />
       <Navigation data-active={menuIsOpen}>
-        {data[language].list.map((item: InavigationList, index: string) => (
+        {data[language].list.map((item: INavigationObject, index: string) => (
           <HeaderNavItem onClick={toggleMenu} key={index} href={item.url}>
             {item.name}
           </HeaderNavItem>

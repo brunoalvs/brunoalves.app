@@ -1,11 +1,12 @@
 import React, { useContext } from "react"
 import Head from "next/head"
 
-import { Container, TopHeader, Content } from "./styled"
 import ToggleThemeButton from "../../Molecules/ToggleThemeButton"
 import InputLanguage from "../../Molecules/InputLanguage"
 import HeaderNavigation from "../../Molecules/HeaderNavigation"
 import { LayoutContext } from "../../../contexts/layout"
+
+import { Container, TopHeader, Content } from "./styled"
 
 interface Props {
   title?: string
