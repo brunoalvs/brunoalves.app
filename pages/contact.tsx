@@ -9,6 +9,7 @@ import Text from "../components/Atoms/Typography/Text"
 
 import { LayoutContext } from "../contexts/layout"
 import { useContext } from "react"
+import Loading from "../components/Organisms/Loading"
 
 const Contact: NextPage = () => {
   const { language } = useContext(LayoutContext)
@@ -17,7 +18,7 @@ const Contact: NextPage = () => {
   const { data, error } = useSWR("/api/contact", fetcher)
 
   if (error) return <div>ERROR: Failed to load</div>
-  if (!data) return <div>Loading...</div>
+  if (!data) return <Loading />
 
   return (
     <>

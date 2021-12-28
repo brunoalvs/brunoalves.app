@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 const Logo: React.FC = () => {
   return (
@@ -6,6 +6,7 @@ const Logo: React.FC = () => {
       aria-hidden
       width="61"
       height="60"
+      viewBox="0 0 61 60"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -14,7 +15,7 @@ const Logo: React.FC = () => {
         fill="#8368EE"
       />
     </svg>
-  );
-};
+  )
+}
 
-export default Logo;
+export default Logo

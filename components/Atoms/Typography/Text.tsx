@@ -10,6 +10,11 @@ const Container = styled.p`
     color: var(--primary-color);
     font-weight: normal;
   }
+
+  > a {
+    color: var(--primary-color);
+    font-style: italic;
+  }
 `
 
 interface Props {
