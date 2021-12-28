@@ -3,14 +3,12 @@ import axios from "axios"
 import useSWR from "swr"
 import type { NextPage } from "next"
 
-import Layout from "../components/Organisms/Layout"
-import HeadingTitle from "../components/Atoms/Typography/HeadingTitle"
-
 import { LayoutContext } from "../contexts/layout"
-import List from "../components/Atoms/Typography/List"
-import { IDataJob } from "./api/portfolio"
-import Subtitle from "../components/Atoms/Typography/HeadingSubtitle"
-import Text from "../components/Atoms/Typography/Text"
+
+import Layout from "../components/Organisms/Layout"
+import Loading from "../components/Organisms/Loading"
+import JobList from "../components/Molecules/JobList"
+import HeadingTitle from "../components/Atoms/Typography/HeadingTitle"
 
 const Portfolio: NextPage = () => {
   const { language } = useContext(LayoutContext)
@@ -19,22 +17,14 @@ const Portfolio: NextPage = () => {
   const { data, error } = useSWR("/api/portfolio", fetcher)
 
   if (error) return <div>ERROR: Failed to load</div>
-  if (!data) return <div>Loading...</div>
+  if (!data) return <Loading />
 
   return (
     <>
       <Layout title={data[language].title}>
         <HeadingTitle>{data[language].title}</HeadingTitle>
 
-        <List>
-          {data[language].jobs.map((job: IDataJob, index: number) => (
-            <li key={index}>
-              <Subtitle>{job.title}</Subtitle>
-              <Text innerHTML={{ __html: job.content }} />
-              <a href={job.url}>{job.urlLabel}</a>
-            </li>
-          ))}
-        </List>
+        <JobList jobs={data[language].jobs} />
       </Layout>
     </>
   )

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const Container = styled.main`
   background: var(--background-layout);
@@ -8,7 +8,7 @@ export const Container = styled.main`
   &[data-menu="true"] {
     overflow: hidden;
   }
-`;
+`
 
 export const TopHeader = styled.header`
   width: 100%;
@@ -20,14 +20,15 @@ export const TopHeader = styled.header`
   position: sticky;
   top: 0;
   z-index: 10;
-`;
+`
 
 export const Content = styled.section`
   width: 100%;
   height: calc(100vh - 150px);
+  overflow-x: auto;
   padding: 1rem;
 
   @media (min-width: 768px) {
     padding: 2rem 5rem;
   }
-`;
+`

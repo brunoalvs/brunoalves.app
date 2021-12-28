@@ -22,14 +22,14 @@ const data: Data = {
     title: "Hello",
     subtitle: "This is the subtitle",
     content: {
-      __html: `Lorem ipsum English, dolor sit amet consectetur adipisicing elit. Velit, <a href="http://google.com" target="_blank" rel="noopener noreferrer">Google</a> voluptate aut consectetur, facilis, ad adipisci ea non veritatis fugiat accusantium natus laudantium! In omnis, quidem repellat eveniet iusto fugit incidunt.`,
+      __html: `Lorem ipsum English, dolor sit amet consectetur <strong>adipisicing elit</strong>. Velit, <a href="http://google.com" target="_blank" rel="noopener noreferrer">Google</a> voluptate aut consectetur, facilis, ad adipisci ea non veritatis fugiat accusantium natus laudantium! In omnis, quidem repellat eveniet iusto fugit incidunt.`,
     },
   },
   pt: {
     title: "Olá",
     subtitle: "Este é o subtítulo",
     content: {
-      __html: `Lorem ipsum Português, dolor sit amet consectetur adipisicing elit. Velit, <a href="http://google.com" target="_blank" rel="noopener noreferrer">Google</a> voluptate aut consectetur, facilis, ad adipisci ea non veritatis fugiat accusantium natus laudantium! In omnis, quidem repellat eveniet iusto fugit incidunt.`,
+      __html: `Lorem ipsum Português, dolor sit amet consectetur <strong>adipisicing elit</strong>. Velit, <a href="http://google.com" target="_blank" rel="noopener noreferrer">Google</a> voluptate aut consectetur, facilis, ad adipisci ea non veritatis fugiat accusantium natus laudantium! In omnis, quidem repellat eveniet iusto fugit incidunt.`,
     },
   },
 }

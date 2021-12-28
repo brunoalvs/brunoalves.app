@@ -1,14 +1,16 @@
 import axios from "axios"
 import useSWR from "swr"
-import type { NextPage } from "next"
 
+import type { NextPage } from "next"
+import { useContext } from "react"
+
+import { LayoutContext } from "../contexts/layout"
+
+import Loading from "../components/Organisms/Loading"
 import Layout from "../components/Organisms/Layout"
 import Subtitle from "../components/Atoms/Typography/HeadingSubtitle"
 import HeadingTitle from "../components/Atoms/Typography/HeadingTitle"
 import Text from "../components/Atoms/Typography/Text"
-
-import { LayoutContext } from "../contexts/layout"
-import { useContext } from "react"
 
 const Home: NextPage = () => {
   const { language } = useContext(LayoutContext)
@@ -17,7 +19,7 @@ const Home: NextPage = () => {
   const { data, error } = useSWR("/api/home", fetcher)
 
   if (error) return <div>ERROR: Failed to load</div>
-  if (!data) return <div>Loading...</div>
+  if (!data) return <Loading />
 
   return (
     <>
@@ -25,7 +27,6 @@ const Home: NextPage = () => {
         <HeadingTitle>{data[language].title}</HeadingTitle>
         <Subtitle>{data[language].subtitle}</Subtitle>
         <Text innerHTML={data[language].content} />
-        <Text>{data[language].content.__html}</Text>
       </Layout>
     </>
   )

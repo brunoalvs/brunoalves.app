@@ -10,6 +10,7 @@ import Column from "../components/Atoms/Layout/Column"
 
 import { LayoutContext } from "../contexts/layout"
 import { useContext } from "react"
+import Loading from "../components/Organisms/Loading"
 
 const Skills: NextPage = () => {
   const { language } = useContext(LayoutContext)
@@ -18,7 +19,7 @@ const Skills: NextPage = () => {
   const { data, error } = useSWR("/api/skills", fetcher)
 
   if (error) return <div>ERROR: Failed to load</div>
-  if (!data) return <div>Loading...</div>
+  if (!data) return <Loading />
 
   return (
     <>
