@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components"
 
 export const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -55,6 +55,7 @@ export const GlobalStyle = createGlobalStyle`
     --background-navmenu: linear-gradient(171.9deg, #0A0813 0%, #000000 100%);
     --text-color: #fcfcfc;
     --primary-color: #8368EE;
+    --primary-color-hover: #a287f8;
     --secondary-color:  #68EEB6;
     --input-language-bg: #35C789;
     --input-language-dot: #fff;
@@ -65,7 +66,8 @@ export const GlobalStyle = createGlobalStyle`
     --background-topheader: #FBFBFC;
     --background-navmenu: #F6F6FC;
     --text-color: #040716;
-    --primary-color: #8368EE;
+    --primary-color: #6A4CCE;
+    --primary-color-hover: #8368EE;
     --secondary-color:  #35C789;
     --input-language-bg: #A3A9C2;
     --input-language-dot: #DDE0EA;
@@ -75,4 +77,4 @@ export const GlobalStyle = createGlobalStyle`
     height: 100vh;
     overflow: hidden;
   }
-`;
+`

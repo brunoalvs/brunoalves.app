@@ -14,6 +14,11 @@ const Container = styled.p`
   > a {
     color: var(--primary-color);
     font-style: italic;
+    transition: color 0.2s ease;
+  }
+
+  > a:hover {
+    color: var(--primary-color-hover);
   }
 `
 

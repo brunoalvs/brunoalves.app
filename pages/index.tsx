@@ -27,7 +27,6 @@ const Home: NextPage = () => {
         <HeadingTitle>{data[language].title}</HeadingTitle>
         <Subtitle>{data[language].subtitle}</Subtitle>
         <Text innerHTML={data[language].content} />
-        <Text>{data[language].content.__html}</Text>
       </Layout>
     </>
   )
