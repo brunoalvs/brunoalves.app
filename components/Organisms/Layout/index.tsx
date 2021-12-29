@@ -15,6 +15,7 @@ import Loading from "../Loading"
 const Layout: React.FC = ({ children }) => {
   const { darkMode, menuIsOpen, language } = useContext(LayoutContext)
   const [title, setTitle] = useState("")
+  const [navigation, setNavigation] = useState([])
   const { pathname } = useRouter()
 
   const fetcher = async (url: string) =>
@@ -31,6 +32,7 @@ const Layout: React.FC = ({ children }) => {
       ).name
 
       setTitle(currentPageTitle)
+      setNavigation(pageInfo.list)
     }
   }, [data, pathname, language])
 
@@ -53,7 +55,7 @@ const Layout: React.FC = ({ children }) => {
           <ToggleThemeButton />
           <InputLanguage />
         </TopHeader>
-        <HeaderNavigation />
+        <HeaderNavigation navigation={navigation} />
         <Content>{children}</Content>
       </Container>
     </>
