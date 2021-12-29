@@ -1,4 +1,6 @@
-import React, { useContext } from "react"
+import useSWR from "swr"
+import axios from "axios"
+import React, { useContext, useEffect, useState } from "react"
 import Head from "next/head"
 
 import ToggleThemeButton from "../../Molecules/ToggleThemeButton"
@@ -7,18 +9,38 @@ import HeaderNavigation from "../../Molecules/HeaderNavigation"
 import { LayoutContext } from "../../../contexts/layout"
 
 import { Container, TopHeader, Content } from "./styled"
+import { useRouter } from "next/router"
+import Loading from "../Loading"
 
-interface Props {
-  title?: string
-}
+const Layout: React.FC = ({ children }) => {
+  const { darkMode, menuIsOpen, language } = useContext(LayoutContext)
+  const [title, setTitle] = useState("")
+  const { pathname } = useRouter()
 
-const Layout: React.FC<Props> = ({ children, title = "brunoalves.app" }) => {
-  const { darkMode, menuIsOpen } = useContext(LayoutContext)
+  const fetcher = async (url: string) =>
+    await axios(url).then((res) => res.data)
+  const { data, error } = useSWR("/api/navigation", fetcher)
+
+  useEffect(() => {
+    console.log(pathname)
+  }, [])
+
+  // useEffect(() => {
+  //   const pageInfo = data[language]
+  //   const currentPageTitle = pageInfo.list.find(
+  //     (item: any) => item.url === pathname
+  //   ).name
+
+  //   setTitle(currentPageTitle)
+  // }, [pathname, language])
+
+  if (error) return <div>ERROR: Failed to load</div>
+  if (!data) return <Loading />
 
   return (
     <>
       <Head>
-        <title>{title} - brunoalves.app</title>
+        <title>{title ? `${title} - brunoalves.app` : "brunoalves.app"}</title>
         <meta
           name="description"
           content="Portfolio of Bruno Alves, a Front End Developer based on Brazil."
