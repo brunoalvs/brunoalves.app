@@ -2,7 +2,6 @@ import axios from "axios"
 import useSWR from "swr"
 import type { NextPage } from "next"
 
-import Layout from "../components/Organisms/Layout"
 import HeadingTitle from "../components/Atoms/Typography/HeadingTitle"
 import Text from "../components/Atoms/Typography/Text"
 import List from "../components/Atoms/Typography/List"
@@ -23,28 +22,24 @@ const Skills: NextPage = () => {
 
   return (
     <>
-      <Layout title={data[language].title}>
-        <HeadingTitle>{data[language].title}</HeadingTitle>
+      <HeadingTitle>{data[language].title}</HeadingTitle>
 
-        <Column>
-          <Text>{data[language].dev.text}</Text>
-          <List>
-            {data[language].dev.skills.map((skill: string, index: number) => (
-              <li key={index}>{skill}</li>
-            ))}
-          </List>
-        </Column>
-        <Column>
-          <Text>{data[language].design.text}</Text>
-          <List>
-            {data[language].design.skills.map(
-              (skill: string, index: number) => (
-                <li key={index}>{skill}</li>
-              )
-            )}
-          </List>
-        </Column>
-      </Layout>
+      <Column>
+        <Text>{data[language].dev.text}</Text>
+        <List>
+          {data[language].dev.skills.map((skill: string, index: number) => (
+            <li key={index}>{skill}</li>
+          ))}
+        </List>
+      </Column>
+      <Column>
+        <Text>{data[language].design.text}</Text>
+        <List>
+          {data[language].design.skills.map((skill: string, index: number) => (
+            <li key={index}>{skill}</li>
+          ))}
+        </List>
+      </Column>
     </>
   )
 }

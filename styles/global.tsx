@@ -74,7 +74,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   div#__next {
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
   }
 `

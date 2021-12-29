@@ -7,7 +7,6 @@ import { useContext } from "react"
 import { LayoutContext } from "../contexts/layout"
 
 import Loading from "../components/Organisms/Loading"
-import Layout from "../components/Organisms/Layout"
 import Subtitle from "../components/Atoms/Typography/HeadingSubtitle"
 import HeadingTitle from "../components/Atoms/Typography/HeadingTitle"
 import Text from "../components/Atoms/Typography/Text"
@@ -23,11 +22,9 @@ const About: NextPage = () => {
 
   return (
     <>
-      <Layout title={data[language].title}>
-        <HeadingTitle>{data[language].title}</HeadingTitle>
-        <Subtitle>{data[language].subtitle}</Subtitle>
-        <Text innerHTML={data[language].content} />
-      </Layout>
+      <HeadingTitle>{data[language].title}</HeadingTitle>
+      <Subtitle>{data[language].subtitle}</Subtitle>
+      <Text innerHTML={data[language].content} />
     </>
   )
 }

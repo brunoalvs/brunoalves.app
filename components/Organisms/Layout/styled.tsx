@@ -24,8 +24,7 @@ export const TopHeader = styled.header`
 
 export const Content = styled.section`
   width: 100%;
-  height: calc(100vh - 150px);
-  overflow-x: auto;
+  min-height: calc(100vh - 150px);
   padding: 1rem;
 
   @media (min-width: 768px) {
