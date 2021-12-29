@@ -21,20 +21,19 @@ const Layout: React.FC = ({ children }) => {
     await axios(url).then((res) => res.data)
   const { data, error } = useSWR("/api/navigation", fetcher)
 
-  useEffect(() => {
-    console.log(pathname)
-  }, [])
-
-  // useEffect(() => {
-  //   const pageInfo = data[language]
-  //   const currentPageTitle = pageInfo.list.find(
-  //     (item: any) => item.url === pathname
-  //   ).name
-
-  //   setTitle(currentPageTitle)
-  // }, [pathname, language])
-
   if (error) return <div>ERROR: Failed to load</div>
+
+  useEffect(() => {
+    if (data) {
+      const pageInfo = data[language]
+      const currentPageTitle = pageInfo.list.find(
+        (item: any) => item.url === pathname
+      ).name
+
+      setTitle(currentPageTitle)
+    }
+  }, [data, pathname, language])
+
   if (!data) return <Loading />
 
   return (
