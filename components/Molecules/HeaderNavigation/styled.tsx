@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const Container = styled.header`
   width: 100%;
@@ -7,14 +7,16 @@ export const Container = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 1.125rem;
+  z-index: 9;
 
   @media (min-width: 768px) {
     padding: 2rem 1.25rem;
   }
-`;
+`
 
 export const Navigation = styled.nav`
   display: grid;
+  z-index: 1;
 
   a {
     color: var(--text-color);
@@ -70,4 +72,4 @@ export const Navigation = styled.nav`
       }
     }
   }
-`;
+`

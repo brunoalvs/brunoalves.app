@@ -16,7 +16,7 @@ const Contact: NextPage = () => {
   const { data, error } = useSWR("/api/contact", fetcher)
 
   if (error) return <div>ERROR: Failed to load</div>
-  if (!data) return <Loading />
+  if (!data) return <></>
 
   return (
     <>

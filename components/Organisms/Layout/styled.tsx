@@ -27,10 +27,14 @@ export const Content = styled.section`
   min-height: calc(100vh - 150px);
   padding: 1rem;
   opacity: 0;
-  transition: opacity 0.5s;
+  transition: opacity 0.2s;
 
   &[data-animation="fadeIn"] {
     opacity: 1;
+  }
+
+  &[data-animation="fadeOut"] {
+    opacity: 0;
   }
 
   @media (min-width: 768px) {

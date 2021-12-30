@@ -16,7 +16,7 @@ const Portfolio: NextPage = () => {
   const { data, error } = useSWR("/api/portfolio", fetcher)
 
   if (error) return <div>ERROR: Failed to load</div>
-  if (!data) return <Loading />
+  if (!data) return <></>
 
   return (
     <>

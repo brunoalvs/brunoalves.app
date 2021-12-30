@@ -18,7 +18,7 @@ const Home: NextPage = () => {
   const { data, error } = useSWR("/api/home", fetcher)
 
   if (error) return <div>ERROR: Failed to load</div>
-  if (!data) return <Loading />
+  if (!data) return <></>
 
   return (
     <>

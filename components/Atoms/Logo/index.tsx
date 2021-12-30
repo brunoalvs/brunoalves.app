@@ -1,9 +1,14 @@
+import { useRouter } from "next/router"
 import React from "react"
 import { Container } from "./styled"
 
 const Logo: React.FC = () => {
+  const { push } = useRouter()
   return (
     <Container
+      onClick={() => {
+        push("/")
+      }}
       aria-hidden
       width="61"
       height="60"

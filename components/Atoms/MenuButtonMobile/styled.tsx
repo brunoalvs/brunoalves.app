@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const Container = styled.button`
   cursor: pointer;
@@ -11,7 +11,7 @@ export const Container = styled.button`
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
-  z-index: 1;
+  z-index: 10;
 
   > span {
     display: block;
@@ -63,4 +63,4 @@ export const Container = styled.button`
     display: none;
     visibility: hidden;
   }
-`;
+`
