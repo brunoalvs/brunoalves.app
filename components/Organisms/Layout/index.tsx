@@ -13,6 +13,9 @@ import { useRouter } from "next/router"
 import Loading from "../Loading"
 
 const Layout: React.FC = ({ children }) => {
+  const [displayChildren, setDisplayChildren] = useState(children)
+  const [transitionStage, setTransitionStage] = useState("fadeOut")
+
   const { darkMode, menuIsOpen, language } = useContext(LayoutContext)
   const [title, setTitle] = useState("")
   const [navigation, setNavigation] = useState([])
@@ -36,6 +39,14 @@ const Layout: React.FC = ({ children }) => {
     }
   }, [data, pathname, language])
 
+  useEffect(() => {
+    setTransitionStage("fadeIn")
+  }, [])
+
+  useEffect(() => {
+    if (children !== displayChildren) setTransitionStage("fadeOut")
+  }, [children, setDisplayChildren, displayChildren])
+
   if (!data) return <Loading />
 
   return (
@@ -56,7 +67,17 @@ const Layout: React.FC = ({ children }) => {
           <InputLanguage />
         </TopHeader>
         <HeaderNavigation navigation={navigation} />
-        <Content>{children}</Content>
+        <Content
+          onTransitionEnd={() => {
+            if (transitionStage === "fadeOut") {
+              setDisplayChildren(children)
+              setTransitionStage("fadeIn")
+            }
+          }}
+          data-animation={transitionStage}
+        >
+          {displayChildren}
+        </Content>
       </Container>
     </>
   )

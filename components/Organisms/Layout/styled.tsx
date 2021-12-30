@@ -26,6 +26,12 @@ export const Content = styled.section`
   width: 100%;
   min-height: calc(100vh - 150px);
   padding: 1rem;
+  opacity: 0;
+  transition: opacity 0.5s;
+
+  &[data-animation="fadeIn"] {
+    opacity: 1;
+  }
 
   @media (min-width: 768px) {
     padding: 2rem 5rem;
