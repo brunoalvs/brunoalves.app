@@ -2,8 +2,6 @@ import axios from "axios"
 import useSWR from "swr"
 import type { NextPage } from "next"
 
-import Layout from "../components/Organisms/Layout"
-import Subtitle from "../components/Atoms/Typography/HeadingSubtitle"
 import HeadingTitle from "../components/Atoms/Typography/HeadingTitle"
 import Text from "../components/Atoms/Typography/Text"
 
@@ -22,10 +20,8 @@ const Contact: NextPage = () => {
 
   return (
     <>
-      <Layout title={data[language].title}>
-        <HeadingTitle>{data[language].title}</HeadingTitle>
-        <Text innerHTML={data[language].content} />
-      </Layout>
+      <HeadingTitle>{data[language].title}</HeadingTitle>
+      <Text innerHTML={data[language].content} />
     </>
   )
 }

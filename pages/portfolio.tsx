@@ -5,7 +5,6 @@ import type { NextPage } from "next"
 
 import { LayoutContext } from "../contexts/layout"
 
-import Layout from "../components/Organisms/Layout"
 import Loading from "../components/Organisms/Loading"
 import JobList from "../components/Molecules/JobList"
 import HeadingTitle from "../components/Atoms/Typography/HeadingTitle"
@@ -21,11 +20,8 @@ const Portfolio: NextPage = () => {
 
   return (
     <>
-      <Layout title={data[language].title}>
-        <HeadingTitle>{data[language].title}</HeadingTitle>
-
-        <JobList jobs={data[language].jobs} />
-      </Layout>
+      <HeadingTitle>{data[language].title}</HeadingTitle>
+      <JobList jobs={data[language].jobs} />
     </>
   )
 }

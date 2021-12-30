@@ -1,4 +1,6 @@
-import React, { useContext } from "react"
+import useSWR from "swr"
+import axios from "axios"
+import React, { useContext, useEffect, useState } from "react"
 import Head from "next/head"
 
 import ToggleThemeButton from "../../Molecules/ToggleThemeButton"
@@ -7,18 +9,50 @@ import HeaderNavigation from "../../Molecules/HeaderNavigation"
 import { LayoutContext } from "../../../contexts/layout"
 
 import { Container, TopHeader, Content } from "./styled"
+import { useRouter } from "next/router"
+import Loading from "../Loading"
 
-interface Props {
-  title?: string
-}
+const Layout: React.FC = ({ children }) => {
+  const [displayChildren, setDisplayChildren] = useState(children)
+  const [transitionStage, setTransitionStage] = useState("fadeOut")
 
-const Layout: React.FC<Props> = ({ children, title = "brunoalves.app" }) => {
-  const { darkMode, menuIsOpen } = useContext(LayoutContext)
+  const { darkMode, menuIsOpen, language } = useContext(LayoutContext)
+  const [title, setTitle] = useState("")
+  const [navigation, setNavigation] = useState([])
+  const { pathname } = useRouter()
+
+  const fetcher = async (url: string) =>
+    await axios(url).then((res) => res.data)
+  const { data, error } = useSWR("/api/navigation", fetcher)
+
+  if (error) return <div>ERROR: Failed to load</div>
+
+  useEffect(() => {
+    if (data) {
+      const pageInfo = data[language]
+      const currentPageTitle = pageInfo.list.find(
+        (item: any) => item.url === pathname
+      ).name
+
+      setTitle(currentPageTitle)
+      setNavigation(pageInfo.list)
+    }
+  }, [data, pathname, language])
+
+  useEffect(() => {
+    setTransitionStage("fadeIn")
+  }, [])
+
+  useEffect(() => {
+    if (children !== displayChildren) setTransitionStage("fadeOut")
+  }, [children, setDisplayChildren, displayChildren])
+
+  if (!data) return <Loading />
 
   return (
     <>
       <Head>
-        <title>{title} - brunoalves.app</title>
+        <title>{title ? `${title} - brunoalves.app` : "brunoalves.app"}</title>
         <meta
           name="description"
           content="Portfolio of Bruno Alves, a Front End Developer based on Brazil."
@@ -32,8 +66,18 @@ const Layout: React.FC<Props> = ({ children, title = "brunoalves.app" }) => {
           <ToggleThemeButton />
           <InputLanguage />
         </TopHeader>
-        <HeaderNavigation />
-        <Content>{children}</Content>
+        <HeaderNavigation navigation={navigation} />
+        <Content
+          onTransitionEnd={() => {
+            if (transitionStage === "fadeOut") {
+              setDisplayChildren(children)
+              setTransitionStage("fadeIn")
+            }
+          }}
+          data-animation={transitionStage}
+        >
+          {displayChildren}
+        </Content>
       </Container>
     </>
   )
