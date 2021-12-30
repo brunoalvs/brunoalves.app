@@ -1,19 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next"
-
-export interface INavigationObject {
-  name: string
-  url: string
-}
-
-export interface INavigation {
-  en: {
-    list: INavigationObject[]
-  }
-  pt: {
-    list: INavigationObject[]
-  }
-}
+import { INavigation } from "../../types/layout"
 
 const content: INavigation = {
   en: {

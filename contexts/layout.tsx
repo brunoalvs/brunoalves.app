@@ -1,5 +1,7 @@
 import { useRouter } from "next/router"
+import path from "path/posix"
 import { createContext, FC, useEffect, useState } from "react"
+import { INavigation, INavigationObject } from "../types/layout"
 
 type LayoutContextType = {
   isLoading: boolean
@@ -9,6 +11,58 @@ type LayoutContextType = {
   darkMode: boolean
   toggleDarkMode: () => void
   language: "en" | "pt"
+  navigation: INavigationObject[]
+}
+
+const defaultNavigation: INavigation = {
+  en: {
+    list: [
+      {
+        name: "Home",
+        url: "/",
+      },
+      {
+        name: "Portfolio",
+        url: "/portfolio",
+      },
+      {
+        name: "About Me",
+        url: "/about",
+      },
+      {
+        name: "Skills",
+        url: "/skills",
+      },
+      {
+        name: "Get in Touch",
+        url: "/contact",
+      },
+    ],
+  },
+  pt: {
+    list: [
+      {
+        name: "Inicio",
+        url: "/",
+      },
+      {
+        name: "Portfólio",
+        url: "/portfolio",
+      },
+      {
+        name: "Sobre Mim",
+        url: "/about",
+      },
+      {
+        name: "Habilidades",
+        url: "/skills",
+      },
+      {
+        name: "Contato",
+        url: "/contact",
+      },
+    ],
+  },
 }
 
 export const LayoutContext = createContext<LayoutContextType>({
@@ -19,6 +73,7 @@ export const LayoutContext = createContext<LayoutContextType>({
   darkMode: false,
   toggleDarkMode: () => {},
   language: "en",
+  navigation: defaultNavigation["en"].list,
 })
 
 export const LayoutProvider: FC = ({ children }) => {
@@ -38,7 +93,7 @@ export const LayoutProvider: FC = ({ children }) => {
 
     setDarkMode(!darkMode)
   }
-  const { locale } = useRouter()
+  const { locale, pathname } = useRouter()
   const [language, setLanguage] = useState<"en" | "pt">("en")
 
   const getLanguage = () => {
@@ -52,6 +107,14 @@ export const LayoutProvider: FC = ({ children }) => {
   useEffect(() => {
     getLanguage()
   }, [language, locale])
+
+  const [navigation, setNavigation] = useState<INavigationObject[]>(
+    defaultNavigation[language].list
+  )
+
+  useEffect(() => {
+    setNavigation(defaultNavigation[language].list)
+  }, [language, pathname])
 
   const prefersColorScheme = async () => {
     const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)")
@@ -91,6 +154,7 @@ export const LayoutProvider: FC = ({ children }) => {
         darkMode,
         toggleDarkMode,
         language,
+        navigation,
       }}
     >
       {children}
