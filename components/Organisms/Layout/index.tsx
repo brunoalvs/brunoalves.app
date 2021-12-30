@@ -28,6 +28,10 @@ const Layout: React.FC = ({ children }) => {
   if (error) return <div>ERROR: Failed to load</div>
 
   useEffect(() => {
+    setTransitionStage("fadeIn")
+  }, [])
+
+  useEffect(() => {
     if (data) {
       const pageInfo = data[language]
       const currentPageTitle = pageInfo.list.find(
@@ -38,10 +42,6 @@ const Layout: React.FC = ({ children }) => {
       setNavigation(pageInfo.list)
     }
   }, [data, pathname, language])
-
-  useEffect(() => {
-    setTransitionStage("fadeIn")
-  }, [])
 
   useEffect(() => {
     if (children !== displayChildren) setTransitionStage("fadeOut")
