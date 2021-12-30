@@ -6,7 +6,7 @@ import MenuButtonMobile from "../../Atoms/MenuButtonMobile"
 
 import { Container, Navigation } from "./styled"
 import { LayoutContext } from "../../../contexts/layout"
-import { INavigation, INavigationObject } from "../../../types/layout"
+import { INavigationObject } from "../../../types/layout"
 
 type Props = {
   navigation: INavigationObject[]
