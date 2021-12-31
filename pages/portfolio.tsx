@@ -5,7 +5,6 @@ import type { NextPage } from "next"
 
 import { LayoutContext } from "../contexts/layout"
 
-import Loading from "../components/Organisms/Loading"
 import JobList from "../components/Molecules/JobList"
 import HeadingTitle from "../components/Atoms/Typography/HeadingTitle"
 

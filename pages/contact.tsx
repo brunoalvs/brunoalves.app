@@ -7,7 +7,6 @@ import Text from "../components/Atoms/Typography/Text"
 
 import { LayoutContext } from "../contexts/layout"
 import { useContext } from "react"
-import Loading from "../components/Organisms/Loading"
 
 const Contact: NextPage = () => {
   const { language } = useContext(LayoutContext)

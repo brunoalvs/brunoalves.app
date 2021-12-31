@@ -1,5 +1,6 @@
 import axios from "axios"
 import useSWR from "swr"
+import { useContext } from "react"
 import type { NextPage } from "next"
 
 import HeadingTitle from "../components/Atoms/Typography/HeadingTitle"
@@ -8,8 +9,6 @@ import List from "../components/Atoms/Typography/List"
 import Column from "../components/Atoms/Layout/Column"
 
 import { LayoutContext } from "../contexts/layout"
-import { useContext } from "react"
-import Loading from "../components/Organisms/Loading"
 
 const Skills: NextPage = () => {
   const { language } = useContext(LayoutContext)

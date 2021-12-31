@@ -6,7 +6,6 @@ import { useContext } from "react"
 
 import { LayoutContext } from "../contexts/layout"
 
-import Loading from "../components/Organisms/Loading"
 import Subtitle from "../components/Atoms/Typography/HeadingSubtitle"
 import HeadingTitle from "../components/Atoms/Typography/HeadingTitle"
 import Text from "../components/Atoms/Typography/Text"
