@@ -6,11 +6,13 @@ import { useContext } from "react"
 
 import { LayoutContext } from "../contexts/layout"
 
+import HomeTemplate from "../components/Templates/Home"
+
 import Subtitle from "../components/Atoms/Typography/HeadingSubtitle"
 import HeadingTitle from "../components/Atoms/Typography/HeadingTitle"
 import Text from "../components/Atoms/Typography/Text"
 
-const Home: NextPage = () => {
+const Index: NextPage = () => {
   const { language } = useContext(LayoutContext)
   const fetcher = async (url: string) =>
     await axios.get(url).then((res) => res.data)
@@ -18,6 +20,8 @@ const Home: NextPage = () => {
 
   if (error) return <div>ERROR: Failed to load</div>
   if (!data) return <></>
+
+  return <HomeTemplate {...data[language]} />
 
   return (
     <>
@@ -28,4 +32,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default Index

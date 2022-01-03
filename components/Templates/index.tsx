@@ -1,11 +1,11 @@
 import Head from "next/head"
 import { useRouter } from "next/router"
 import React, { useEffect } from "react"
-import { LayoutContext } from "../../../contexts/layout"
-import HeaderNavigation from "../../Molecules/HeaderNavigation"
-import InputLanguage from "../../Molecules/InputLanguage"
-import ToggleThemeButton from "../../Molecules/ToggleThemeButton"
-import { Container, TopHeader, Content } from "./styled"
+import { LayoutContext } from "../../contexts/layout"
+import HeaderNavigation from "../Molecules/HeaderNavigation"
+import InputLanguage from "../Molecules/InputLanguage"
+import ToggleThemeButton from "../Molecules/ToggleThemeButton"
+import { Container, TopHeader, Content } from "../Organisms/Layout/styled"
 
 const Layout: React.FC = ({ children }) => {
   const { pathname } = useRouter()
