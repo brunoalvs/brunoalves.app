@@ -19,15 +19,15 @@ type Data = {
 
 const data: Data = {
   en: {
-    title: "Hello",
-    subtitle: "This is the subtitle",
+    title: "Hello, my name is",
+    subtitle: "I build web sites and mobile apps",
     content: {
       __html: `Lorem ipsum English, dolor sit amet consectetur <strong>adipisicing elit</strong>. Velit, <a href="http://google.com" target="_blank" rel="noopener noreferrer">Google</a> voluptate aut consectetur, facilis, ad adipisci ea non veritatis fugiat accusantium natus laudantium! In omnis, quidem repellat eveniet iusto fugit incidunt.`,
     },
   },
   pt: {
-    title: "Olá",
-    subtitle: "Este é o subtítulo",
+    title: "Olá, meu nome é",
+    subtitle: "Eu construo sites e aplicativos para dispositivos móveis",
     content: {
       __html: `Lorem ipsum Português, dolor sit amet consectetur <strong>adipisicing elit</strong>. Velit, <a href="http://google.com" target="_blank" rel="noopener noreferrer">Google</a> voluptate aut consectetur, facilis, ad adipisci ea non veritatis fugiat accusantium natus laudantium! In omnis, quidem repellat eveniet iusto fugit incidunt.`,
     },
