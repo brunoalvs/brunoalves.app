@@ -12,3 +12,11 @@ export interface IContentHome {
     alt?: string
   }
 }
+
+export interface IContentAbout {
+  title: string
+  subtitle: string
+  content: {
+    __html: string
+  }
+}
