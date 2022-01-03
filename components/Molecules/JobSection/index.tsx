@@ -26,7 +26,9 @@ const JobSection: React.FC<IDataJob> = ({
       <Content>
         <Subtitle>{title}</Subtitle>
         <Text innerHTML={{ __html: content }} />
-        <a href={url}>{urlLabel}</a>
+        <a href={url} target="_blank" rel="noopener noreferrer">
+          {urlLabel}
+        </a>
       </Content>
     </Container>
   )
