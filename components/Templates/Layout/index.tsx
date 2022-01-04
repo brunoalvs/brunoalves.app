@@ -1,11 +1,11 @@
 import Head from "next/head"
 import { useRouter } from "next/router"
 import React, { useEffect } from "react"
-import { LayoutContext } from "../../contexts/layout"
-import HeaderNavigation from "../Molecules/HeaderNavigation"
-import InputLanguage from "../Molecules/InputLanguage"
-import ToggleThemeButton from "../Molecules/ToggleThemeButton"
-import { Container, TopHeader, Content } from "../Organisms/Layout/styled"
+import { LayoutContext } from "../../../contexts/layout"
+import HeaderNavigation from "../../Molecules/HeaderNavigation"
+import InputLanguage from "../../Molecules/InputLanguage"
+import ToggleThemeButton from "../../Molecules/ToggleThemeButton"
+import { Container, TopHeader, Content } from "./styled"
 
 const Layout: React.FC = ({ children }) => {
   const { pathname } = useRouter()
@@ -24,7 +24,7 @@ const Layout: React.FC = ({ children }) => {
   useEffect(() => {
     setLayoutTitle(navigation.find((item) => item.url === pathname)?.name)
     children !== displayChildren && setTransitionStage("fadeOut")
-  }, [children, setDisplayChildren, displayChildren])
+  }, [children, setDisplayChildren, displayChildren, navigation, pathname])
 
   return (
     <>

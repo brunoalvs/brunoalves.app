@@ -1,11 +1,22 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
-  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-    // Important: return the modified config
-    config.module.rules.push({
-      test: /\.md$/,
-      use: "raw-loader",
-    })
+  webpack: (config) => {
+    config.module.rules.push(
+      {
+        test: /\.md$/,
+        use: "raw-loader",
+      },
+      {
+        test: /\.mdx$/,
+        use: [
+          {
+            loader: "@mdx-js/loader",
+            /** @type {import('@mdx-js/loader').Options} */
+            options: {},
+          },
+        ],
+      }
+    )
     return config
   },
   reactStrictMode: true,
