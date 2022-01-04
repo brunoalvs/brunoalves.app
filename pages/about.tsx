@@ -1,30 +1,18 @@
-import axios from "axios"
-import useSWR from "swr"
-
 import type { NextPage } from "next"
 import { useContext } from "react"
 
 import { LayoutContext } from "../contexts/layout"
 
-import Subtitle from "../components/Atoms/Typography/HeadingSubtitle"
-import HeadingTitle from "../components/Atoms/Typography/HeadingTitle"
-import Text from "../components/Atoms/Typography/Text"
+import Portuguese from "../content/about/pt.mdx"
+import English from "../content/about/en.mdx"
+
+import { Container } from "../styles/page.about"
 
 const About: NextPage = () => {
   const { language } = useContext(LayoutContext)
-  const fetcher = async (url: string) =>
-    await axios.get(url).then((res) => res.data)
-  const { data, error } = useSWR("/api/about", fetcher)
-
-  if (error) return <div>ERROR: Failed to load</div>
-  if (!data) return <></>
 
   return (
-    <>
-      <HeadingTitle>{data[language].title}</HeadingTitle>
-      <Subtitle>{data[language].subtitle}</Subtitle>
-      <Text innerHTML={data[language].content} />
-    </>
+    <Container>{language === "pt" ? <Portuguese /> : <English />}</Container>
   )
 }
 

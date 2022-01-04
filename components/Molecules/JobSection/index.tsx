@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { IDataJob } from "../../../pages/api/portfolio"
 
-import Subtitle from "../../Atoms/Typography/HeadingSubtitle"
+import HeadingSubtitle from "../../Atoms/Typography/HeadingSubtitle"
 import Text from "../../Atoms/Typography/Text"
 
 import { Container, Content } from "./styles"
@@ -24,7 +24,7 @@ const JobSection: React.FC<IDataJob> = ({
         priority={true}
       />
       <Content>
-        <Subtitle>{title}</Subtitle>
+        <HeadingSubtitle>{title}</HeadingSubtitle>
         <Text innerHTML={{ __html: content }} />
         <a href={url} target="_blank" rel="noopener noreferrer">
           {urlLabel}

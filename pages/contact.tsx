@@ -1,28 +1,15 @@
-import axios from "axios"
-import useSWR from "swr"
-import type { NextPage } from "next"
-
-import HeadingTitle from "../components/Atoms/Typography/HeadingTitle"
-import Text from "../components/Atoms/Typography/Text"
+import { NextPage } from "next"
+import { useContext } from "react"
 
 import { LayoutContext } from "../contexts/layout"
-import { useContext } from "react"
+
+import Portuguese from "../content/contact/pt.mdx"
+import English from "../content/contact/en.mdx"
 
 const Contact: NextPage = () => {
   const { language } = useContext(LayoutContext)
-  const fetcher = async (url: string) =>
-    await axios.get(url).then((res) => res.data)
-  const { data, error } = useSWR("/api/contact", fetcher)
 
-  if (error) return <div>ERROR: Failed to load</div>
-  if (!data) return <></>
-
-  return (
-    <>
-      <HeadingTitle>{data[language].title}</HeadingTitle>
-      <Text innerHTML={data[language].content} />
-    </>
-  )
+  return <>{language === "pt" ? <Portuguese /> : <English />}</>
 }
 
 export default Contact

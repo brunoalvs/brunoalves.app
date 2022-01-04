@@ -76,4 +76,18 @@ export const GlobalStyle = createGlobalStyle`
   div#__next {
     min-height: 100vh;
   }
+
+  .layout_container {
+    > h2 {
+      color: var(--text-color);
+      font-size: 2.625rem;
+      font-weight: 700;
+      line-height: 160%;
+
+      @media (min-width: 768px) {
+        font-size: 4rem;
+      }
+    }
+  }
+
 `

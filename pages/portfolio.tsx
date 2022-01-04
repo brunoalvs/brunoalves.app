@@ -1,12 +1,12 @@
-import { useContext } from "react"
 import axios from "axios"
 import useSWR from "swr"
-import type { NextPage } from "next"
+import { NextPage } from "next"
+import { useContext } from "react"
 
 import { LayoutContext } from "../contexts/layout"
 
-import JobList from "../components/Molecules/JobList"
 import HeadingTitle from "../components/Atoms/Typography/HeadingTitle"
+import JobList from "../components/Molecules/JobList"
 
 const Portfolio: NextPage = () => {
   const { language } = useContext(LayoutContext)

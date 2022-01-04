@@ -1,11 +1,13 @@
 import Head from "next/head"
 import { useRouter } from "next/router"
 import React, { useEffect } from "react"
-import { LayoutContext } from "../../contexts/layout"
-import HeaderNavigation from "../Molecules/HeaderNavigation"
-import InputLanguage from "../Molecules/InputLanguage"
-import ToggleThemeButton from "../Molecules/ToggleThemeButton"
-import { Container, TopHeader, Content } from "../Organisms/Layout/styled"
+
+import { LayoutContext } from "../../../contexts/layout"
+import HeaderNavigation from "../../Molecules/HeaderNavigation"
+import InputLanguage from "../../Molecules/InputLanguage"
+import ToggleThemeButton from "../../Molecules/ToggleThemeButton"
+
+import { Container, TopHeader, Content } from "./styled"
 
 const Layout: React.FC = ({ children }) => {
   const { pathname } = useRouter()
@@ -24,12 +26,40 @@ const Layout: React.FC = ({ children }) => {
   useEffect(() => {
     setLayoutTitle(navigation.find((item) => item.url === pathname)?.name)
     children !== displayChildren && setTransitionStage("fadeOut")
-  }, [children, setDisplayChildren, displayChildren])
+  }, [children, setDisplayChildren, displayChildren, navigation, pathname])
 
   return (
     <>
       <Head>
-        <title>{layoutTitle} - brunoalves.app</title>
+        <title>{layoutTitle ?? "Front End"} - brunoalves.app</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#010101" />
+        <link rel="icon" href="/favicon.svg" />
+
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="192x192"
+          href="/favicon-192x192.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="96x96"
+          href="/favicon-96x96.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
       </Head>
       <Container
         data-theme={darkMode ? "dark" : "light"}
