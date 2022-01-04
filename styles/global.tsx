@@ -77,7 +77,6 @@ export const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
   }
 
-
   p {
     color: var(--text-color);
     font-size: 1.3rem;
