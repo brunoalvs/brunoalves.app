@@ -1,5 +1,4 @@
 import { useRouter } from "next/router"
-import path from "path/posix"
 import { createContext, FC, useEffect, useState } from "react"
 import { INavigation, INavigationObject } from "../types/layout"
 
