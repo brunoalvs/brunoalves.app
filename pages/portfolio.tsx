@@ -18,10 +18,10 @@ const Portfolio: NextPage = () => {
   if (!data) return <></>
 
   return (
-    <>
+    <div>
       <HeadingTitle>{data[language].title}</HeadingTitle>
       <JobList jobs={data[language].jobs} />
-    </>
+    </div>
   )
 }
 
