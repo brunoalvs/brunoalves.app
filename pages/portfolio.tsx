@@ -3,10 +3,10 @@ import useSWR from "swr"
 import { NextPage } from "next"
 import { useContext } from "react"
 
-import { LayoutContext } from "../../contexts/layout"
+import { LayoutContext } from "../contexts/layout"
 
-import HeadingTitle from "../../components/Atoms/Typography/HeadingTitle"
-import JobList from "../../components/Molecules/JobList"
+import HeadingTitle from "../components/Atoms/Typography/HeadingTitle"
+import JobList from "../components/Molecules/JobList"
 
 const Portfolio: NextPage = () => {
   const { language } = useContext(LayoutContext)

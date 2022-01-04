@@ -1,12 +1,12 @@
 import type { NextPage } from "next"
 import { useContext } from "react"
 
-import { LayoutContext } from "../../contexts/layout"
+import { LayoutContext } from "../contexts/layout"
 
-import Portuguese from "../../content/about/pt.mdx"
-import English from "../../content/about/en.mdx"
+import Portuguese from "../content/about/pt.mdx"
+import English from "../content/about/en.mdx"
 
-import { Container } from "./styled"
+import { Container } from "../styles/page.about"
 
 const About: NextPage = () => {
   const { language } = useContext(LayoutContext)
