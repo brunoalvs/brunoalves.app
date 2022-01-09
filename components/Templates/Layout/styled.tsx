@@ -23,11 +23,14 @@ export const TopHeader = styled.header`
 `
 
 export const Content = styled.section`
+  display: flex;
+  justify-content: center;
   width: 100%;
   min-height: calc(100vh - 150px);
   padding: 1rem;
   opacity: 0;
   visibility: hidden;
+  overflow-x: hidden;
 
   &[data-animation="fadeIn"] {
     opacity: 1;

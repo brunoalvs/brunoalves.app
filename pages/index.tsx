@@ -6,10 +6,14 @@ import { LayoutContext } from "../contexts/layout"
 import Portuguese from "../content/home/pt.mdx"
 import English from "../content/home/en.mdx"
 
+import { Container } from "../styles/page.home"
+
 const Home: NextPage = () => {
   const { language } = useContext(LayoutContext)
 
-  return <>{language === "pt" ? <Portuguese /> : <English />}</>
+  return (
+    <Container>{language === "pt" ? <Portuguese /> : <English />}</Container>
+  )
 }
 
 export default Home

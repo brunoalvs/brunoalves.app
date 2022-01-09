@@ -77,17 +77,30 @@ export const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
   }
 
-  .layout_container {
-    > h2 {
-      color: var(--text-color);
-      font-size: 2.625rem;
-      font-weight: 700;
-      line-height: 160%;
+  p {
+    color: var(--text-color);
+    font-size: 1.3rem;
+    line-height: 160%;
 
-      @media (min-width: 768px) {
-        font-size: 4rem;
-      }
+    > strong {
+      color: var(--primary-color);
+      font-weight: 600;
     }
+
+    > a {
+      color: var(--primary-color);
+      font-style: italic;
+      transition: color 0.2s ease;
+    }
+
+    > a:hover {
+      color: var(--primary-color-hover);
+    }
+
+    @media (min-width: 768px) {
+      font-size: 1.5rem;
+    }
+
   }
 
 `

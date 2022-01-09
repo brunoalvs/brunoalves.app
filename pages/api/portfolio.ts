@@ -32,6 +32,13 @@ const data = {
         image: "/images/jobs/consul-acessibilidade.png",
       },
       {
+        title: "Limited Edition Mixer - KitchenAid",
+        content: "A landing page for the kitchenaid mixer.",
+        url: "https://www.kitchenaid.com.br/edicao-limitada",
+        urlLabel: "See the project",
+        image: "/images/jobs/kitchenaid-mixer.png",
+      },
+      {
         title: "Artisan Colors - KitchenAid Latin America",
         content: "Lorem ipsum sit amet",
         url: "https://www.kitchenaid.com.br/eletroportateis/batedeira-novas-cores",
@@ -50,6 +57,14 @@ const data = {
         url: "https://loja.consul.com.br/adesivos-tateis-alto-relevo-pra-cego-ver",
         urlLabel: "Veja o projeto",
         image: "/images/jobs/consul-acessibilidade.png",
+      },
+      {
+        title: "Batedeira Edição Limitada - KitchenAid",
+        content:
+          "Uma landing page especial para a batedeira Edição Limitada da KitchenAid, destacando os detalhes do produto e fazendo parte da loja oficial da Kitchen Aid.",
+        url: "https://www.kitchenaid.com.br/edicao-limitada",
+        urlLabel: "Acesse",
+        image: "/images/jobs/kitchenaid-artisan.png",
       },
       {
         title: "Colors - KitchenAid",
