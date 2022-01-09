@@ -8,6 +8,8 @@ import { LayoutContext } from "../contexts/layout"
 import HeadingTitle from "../components/Atoms/Typography/HeadingTitle"
 import JobList from "../components/Molecules/JobList"
 
+import { Container } from "../styles/page.portfolio"
+
 const Portfolio: NextPage = () => {
   const { language } = useContext(LayoutContext)
   const fetcher = async (url: string) =>
@@ -18,10 +20,10 @@ const Portfolio: NextPage = () => {
   if (!data) return <></>
 
   return (
-    <div>
+    <Container>
       <HeadingTitle>{data[language].title}</HeadingTitle>
       <JobList jobs={data[language].jobs} />
-    </div>
+    </Container>
   )
 }
 

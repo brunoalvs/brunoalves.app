@@ -22,6 +22,7 @@ export const Container = styled.li`
 
   @media (min-width: 968px) {
     display: grid;
+    align-items: center;
     grid-template-columns: 1fr 1.2fr;
     gap: 2rem 5rem;
   }
@@ -29,5 +30,6 @@ export const Container = styled.li`
 
 export const Content = styled.article`
   display: grid;
+  grid-template-rows: repeat(3, max-content);
   gap: 2rem;
 `
