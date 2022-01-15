@@ -1,13 +1,12 @@
 import styled from "styled-components"
 
 export const Container = styled.section`
-  border: 1px dashed yellowgreen;
   display: grid;
 
   > article {
     max-width: 625px;
-    border: 1px dashed lime;
     display: grid;
+    grid-template-rows: 1fr 0.5fr 1fr;
     gap: 1rem;
   }
 
