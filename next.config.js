@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
+  images: {
+    domains: ["via.placeholder.com"],
+  },
   webpack: (config) => {
     config.module.rules.push(
       {
