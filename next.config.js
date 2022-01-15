@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
   images: {
-    domains: ["via.placeholder.com"],
+    domains: ["via.placeholder.com", "images.unsplash.com"],
   },
   webpack: (config) => {
     config.module.rules.push(

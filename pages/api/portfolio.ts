@@ -36,7 +36,7 @@ const data = {
         content: "A landing page for the kitchenaid mixer.",
         url: "https://www.kitchenaid.com.br/edicao-limitada",
         urlLabel: "See the project",
-        image: "/images/jobs/kitchenaid-mixer.png",
+        image: "/images/jobs/kitchenaid-limitededition.png",
       },
       {
         title: "Artisan Colors - KitchenAid Latin America",
@@ -64,7 +64,7 @@ const data = {
           "Uma landing page especial para a batedeira Edição Limitada da KitchenAid, destacando os detalhes do produto e fazendo parte da loja oficial da Kitchen Aid.",
         url: "https://www.kitchenaid.com.br/edicao-limitada",
         urlLabel: "Acesse",
-        image: "/images/jobs/kitchenaid-artisan.png",
+        image: "/images/jobs/kitchenaid-limitededition.png",
       },
       {
         title: "Colors - KitchenAid",

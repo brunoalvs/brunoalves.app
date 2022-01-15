@@ -7,11 +7,10 @@ const Avatar = () => {
       <div>
         <div>
           <Image
-            src="https://via.placeholder.com/450"
+            src="/images/avatar.png"
             alt="Avatar"
-            width={100}
-            height={100}
             layout="fill"
+            objectFit="cover"
           />
         </div>
       </div>

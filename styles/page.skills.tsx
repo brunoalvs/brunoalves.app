@@ -15,14 +15,13 @@ export const Container = styled.section`
     gap: 1rem;
 
     ul {
-      list-style: none;
-      padding: 1rem 0;
+      margin-left: 2rem;
+      padding: 2rem 0;
     }
 
     ul li {
-      border: 1px dashed tomato;
       font-size: 1.3rem;
-      padding: 0.5rem 0;
+      padding: 0.65rem 0;
     }
 
     @media (min-width: 992px) {
