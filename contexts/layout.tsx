@@ -25,10 +25,6 @@ const defaultNavigation: INavigation = {
         url: "/portfolio",
       },
       {
-        name: "About Me",
-        url: "/about",
-      },
-      {
         name: "Skills",
         url: "/skills",
       },
@@ -47,10 +43,6 @@ const defaultNavigation: INavigation = {
       {
         name: "Portfólio",
         url: "/portfolio",
-      },
-      {
-        name: "Sobre Mim",
-        url: "/about",
       },
       {
         name: "Habilidades",
