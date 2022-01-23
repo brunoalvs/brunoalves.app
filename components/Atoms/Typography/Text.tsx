@@ -7,13 +7,13 @@ const Container = styled.p`
   line-height: 160%;
 
   > a {
-    color: var(--primary-color);
+    color: var(--link-color);
     font-style: italic;
     transition: color 0.2s ease;
   }
 
   > a:hover {
-    color: var(--primary-color-hover);
+    color: var(--link-color-hover);
   }
 `
 
