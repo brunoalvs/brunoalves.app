@@ -41,10 +41,10 @@ const Home: NextPage = () => {
         </HeadingTitle>
         <HeadingSubtitle>I develop mobile apps and websites</HeadingSubtitle>
         <Text>
-          I'm a <strong>Front End Developer</strong> and beginner to UI Designer
-          from Brazil based on Porto, Portugal. I'm interested in building web
-          and mobile apps with highlighting the visual aspects and user
-          experience.
+          I&apos;m a <strong>Front End Developer</strong> and beginner to UI
+          Designer from Brazil based on Porto, Portugal. I'm interested in
+          building web and mobile apps with highlighting the visual aspects and
+          user experience.
         </Text>
       </article>
 
