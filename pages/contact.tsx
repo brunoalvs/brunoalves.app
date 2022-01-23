@@ -4,6 +4,7 @@ import { LayoutContext } from "../contexts/layout"
 
 import HeadingTitle from "../components/Atoms/Typography/HeadingTitle"
 import Text from "../components/Atoms/Typography/Text"
+import ListSocial from "../components/Molecules/ListSocial"
 
 import { Container } from "../styles/page.contact"
 
@@ -20,6 +21,7 @@ const Contact: NextPage = () => {
           entrar em contato comigo através do e-mail{" "}
           <a href="mailto:hello@brunoalves.app">hello@brunoalves.app</a>.
         </Text>
+        <ListSocial />
       </Container>
     )
   }
@@ -28,10 +30,12 @@ const Contact: NextPage = () => {
     <Container>
       <HeadingTitle>Get in Touch</HeadingTitle>
       <Text>
-        If you wanna get in touch, talk to me about a project collaboration or
-        just say hi, fill up the awesome form below or send an email to
-        rafael@caferati.me and ~let's talk.
+        If you liked my work and want to know more about me, talk about a
+        project collaboration or just say hi, you can send an email to me at{" "}
+        <a href="mailto:hello@brunoalves.app">hello@brunoalves.app</a>, or you
+        can find me on:
       </Text>
+      <ListSocial />
     </Container>
   )
 }
