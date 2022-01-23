@@ -1,13 +1,12 @@
 import type { NextPage } from "next"
 import { useContext } from "react"
-
 import { LayoutContext } from "../contexts/layout"
 
-import { Container } from "../styles/page.home"
 import HeadingTitle from "../components/Atoms/Typography/HeadingTitle"
 import HeadingSubtitle from "../components/Atoms/Typography/HeadingSubtitle"
 import Text from "../components/Atoms/Typography/Text"
 import Avatar from "../components/Molecules/Avatar"
+import { Container } from "../styles/page.home"
 
 const Home: NextPage = () => {
   const { language } = useContext(LayoutContext)

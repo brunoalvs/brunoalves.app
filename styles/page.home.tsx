@@ -6,7 +6,7 @@ export const Container = styled.section`
   > article {
     max-width: 625px;
     display: grid;
-    grid-template-rows: 1fr 0.5fr 1fr;
+    grid-template-rows: auto auto 1fr;
     gap: 1rem;
   }
 
@@ -25,5 +25,9 @@ export const Container = styled.section`
   @media (min-width: 1024px) {
     grid-template-columns: 1.5fr 1fr;
     gap: 5rem;
+
+    > article h2 {
+      margin-bottom: 2rem;
+    }
   }
 `

@@ -5,6 +5,7 @@ export const Container = styled.div`
   height: 100%;
   display: grid;
   gap: 1.5rem;
+  align-items: center;
 
   > h1 {
     margin-bottom: 1rem;
