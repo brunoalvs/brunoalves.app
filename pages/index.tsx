@@ -6,7 +6,8 @@ import HeadingTitle from "../components/Atoms/Typography/HeadingTitle"
 import HeadingSubtitle from "../components/Atoms/Typography/HeadingSubtitle"
 import Text from "../components/Atoms/Typography/Text"
 import Avatar from "../components/Molecules/Avatar"
-import { Container } from "../styles/page.home"
+
+import { Container, Content } from "../styles/page.home"
 
 const Home: NextPage = () => {
   const { language } = useContext(LayoutContext)
@@ -14,7 +15,7 @@ const Home: NextPage = () => {
   if (language === "pt") {
     return (
       <Container>
-        <article>
+        <Content>
           <HeadingTitle>
             Olá, meu nome é <strong>Bruno Alves</strong>.
           </HeadingTitle>
@@ -27,15 +28,14 @@ const Home: NextPage = () => {
             Portugal. Sou focado em construir aplicações móveis e web com
             atenção a usabilidade e aos aspectos mais visuais.
           </Text>
-        </article>
-        <Avatar />
+        </Content>
       </Container>
     )
   }
 
   return (
     <Container>
-      <article>
+      <Content>
         <HeadingTitle>
           Hello, my name is <strong>Bruno Alves</strong>.
         </HeadingTitle>
@@ -46,9 +46,7 @@ const Home: NextPage = () => {
           and mobile apps with highlighting the visual aspects and user
           experience.
         </Text>
-      </article>
-
-      <Avatar />
+      </Content>
     </Container>
   )
 }
