@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { IDataJob } from "../../../pages/api/portfolio"
+import { ExternalLink } from "../../Atoms/Typography/ExternalLink"
 
 import HeadingSubtitle from "../../Atoms/Typography/HeadingSubtitle"
 import Text from "../../Atoms/Typography/Text"
@@ -25,10 +26,8 @@ const JobSection: React.FC<IDataJob> = ({
       />
       <Content>
         <HeadingSubtitle>{title}</HeadingSubtitle>
-        <Text innerHTML={{ __html: content }} />
-        <a href={url} target="_blank" rel="noopener noreferrer">
-          {urlLabel}
-        </a>
+        <Text innerHTML={content} />
+        <ExternalLink href={url}>{urlLabel}</ExternalLink>
       </Content>
     </Container>
   )

@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const Container = styled.section`
   display: grid;
 
-  > article {
+  > .article {
     max-width: 625px;
     display: grid;
     grid-template-rows: auto auto 1fr;
@@ -26,8 +26,15 @@ export const Container = styled.section`
     grid-template-columns: 1.5fr 1fr;
     gap: 5rem;
 
-    > article h2 {
+    > .article h2 {
       margin-bottom: 2rem;
     }
   }
+`
+
+export const Content = styled.article`
+  max-width: 625px;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: 1rem;
 `

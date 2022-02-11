@@ -3,11 +3,11 @@ import styled, { keyframes } from "styled-components"
 const fadeIn = keyframes`
   from {
     opacity: 0;
-    transform: scale(0) translateX(0);
+    transform: scale(0);
   }
   to {
     opacity: 1;
-    transform: scale(1) translateX(30%);
+    transform: scale(1);
   }
 `
 
@@ -35,7 +35,6 @@ export const Container = styled.section`
   @media (min-width: 1024px) {
     max-width: 350px;
     max-height: 350px;
-    transform: translateX(30%);
   }
 
   background: #8368ee;

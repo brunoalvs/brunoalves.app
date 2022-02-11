@@ -1,4 +1,4 @@
-import React, { DOMAttributes } from "react"
+import React from "react"
 import styled from "styled-components"
 
 const Container = styled.p`
@@ -18,7 +18,7 @@ const Container = styled.p`
 `
 
 interface Props {
-  innerHTML?: DOMAttributes<HTMLParagraphElement>["dangerouslySetInnerHTML"]
+  innerHTML?: string
 }
 
 const Text: React.FC<Props> = ({ children, innerHTML }) => {
@@ -26,7 +26,7 @@ const Text: React.FC<Props> = ({ children, innerHTML }) => {
     return (
       <Container
         dangerouslySetInnerHTML={{
-          __html: innerHTML.__html,
+          __html: innerHTML,
         }}
       />
     )
