@@ -6,6 +6,8 @@ import HeadingTitle from "../../Atoms/Typography/HeadingTitle"
 import Text from "../../Atoms/Typography/Text"
 import Avatar from "../../Molecules/Avatar"
 
+import { Container, About } from "./styles"
+
 type HomePageProps = {
   content: {
     title: string
@@ -16,8 +18,8 @@ type HomePageProps = {
 
 export function HomePage({ content }: HomePageProps) {
   return (
-    <div>
-      <section>
+    <Container>
+      <section className="presentation">
         <article>
           <HeadingTitle>{parse(content.title)}</HeadingTitle>
           <HeadingSubtitle>{content.subtitle}</HeadingSubtitle>
@@ -26,10 +28,10 @@ export function HomePage({ content }: HomePageProps) {
             <Text key={index}>{parse(text)}</Text>
           ))}
         </article>
+        <Avatar />
       </section>
-      <section>
-        <ChevronsDown />
-
+      <ChevronsDown />
+      <About>
         <Text>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. At sagittis
           facilisis urna ante eget a sodales. Nisi, sapien pellentesque tortor
@@ -46,8 +48,8 @@ export function HomePage({ content }: HomePageProps) {
           habitant.
         </Text>
 
-        <ExternalLink href={"#"}>My resume (pdf)</ExternalLink>
-      </section>
-    </div>
+        <ExternalLink href={"/cv-brunoalves.pdf"}>My resume (pdf)</ExternalLink>
+      </About>
+    </Container>
   )
 }
