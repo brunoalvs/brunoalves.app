@@ -26,21 +26,23 @@ const data = {
       {
         title: "Touched Sticker - Consul",
         content:
-          "A landing page acessible to blind people or people with visuals disabilities, that allows them to interact with the company and its products.",
+          "Accessible landing page to people with any kind of visual impairment to promote Consul’s new tactile stickers, which allows the identification of the featrues for some Consul’s models of stoves and microwaves.",
         url: "https://loja.consul.com.br/adesivos-tateis-alto-relevo-pra-cego-ver",
         urlLabel: "See the project",
         image: "/images/jobs/consul-acessibilidade.png",
       },
       {
-        title: "Limited Edition Mixer - KitchenAid",
-        content: "A landing page for the kitchenaid mixer.",
+        title: "Mixer Limited Edition - KitchenAid",
+        content:
+          "A special landing page for the limited edition of KitchenAid’s mixer, highlighting the product's details and being part of the official Kitchen Aid store.",
         url: "https://www.kitchenaid.com.br/edicao-limitada",
         urlLabel: "See the project",
         image: "/images/jobs/kitchenaid-limitededition.png",
       },
       {
         title: "Artisan Colors - KitchenAid Latin America",
-        content: "Lorem ipsum sit amet",
+        content:
+          "Communicate the launch of the new Astisan’s mixer in Brazil, providing an immersive experience for the costumer through multiple colors options.",
         url: "https://www.kitchenaid.com.br/eletroportateis/batedeira-novas-cores",
         urlLabel: "Go to Site",
         image: "/images/jobs/kitchenaid-artisan.png",
@@ -53,7 +55,7 @@ const data = {
       {
         title: "Adesivos Táteis - Consul",
         content:
-          "Landing Page acessível para pessoas cegas ou com algum tipo de deficiência visual, para divulgar os <strong>novos adesivos táteis da Consul</strong>, que facilitam a identificação das funções de alguns modelos de fogões e micro-ondas da Consul.",
+          "Landing Page acessível para pessoas cegas ou com algum tipo de deficiência visual, para divulgar os novos adesivos táteis da Consul, que facilitam a identificação das funções de alguns modelos de fogões e micro-ondas da Consul.",
         url: "https://loja.consul.com.br/adesivos-tateis-alto-relevo-pra-cego-ver",
         urlLabel: "Veja o projeto",
         image: "/images/jobs/consul-acessibilidade.png",
@@ -61,7 +63,7 @@ const data = {
       {
         title: "Batedeira Edição Limitada - KitchenAid",
         content:
-          "Uma landing page especial para a batedeira Edição Limitada da KitchenAid, destacando os detalhes do produto e fazendo parte da loja oficial da Kitchen Aid.",
+          "Uma landing page especial para a batedeira, Edição Limitada, da KitchenAid, destacando os detalhes do produto e fazendo parte da loja oficial da Kitchen Aid.",
         url: "https://www.kitchenaid.com.br/edicao-limitada",
         urlLabel: "Acesse",
         image: "/images/jobs/kitchenaid-limitededition.png",
@@ -69,7 +71,7 @@ const data = {
       {
         title: "Colors - KitchenAid",
         content:
-          "Comunicar o lançamento das novas cores da batedeira Artisan no Brasil, fornecendo uma experiência imersiva para o consumidor pelas várias cores",
+          "Comunicar o lançamento das novas cores da batedeira Artisan no Brasil, fornecendo uma experiência imersiva para o consumidor pelas várias cores.",
         url: "https://www.kitchenaid.com.br/eletroportateis/batedeira-novas-cores",
         urlLabel: "Veja o site",
         image: "/images/jobs/kitchenaid-artisan.png",
