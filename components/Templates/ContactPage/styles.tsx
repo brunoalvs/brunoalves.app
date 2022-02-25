@@ -1,6 +1,10 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+
   .content {
     width: 100%;
     display: flex;
@@ -8,8 +12,13 @@ export const Container = styled.div`
     justify-content: center;
 
     > p {
-      margin-top: 1rem;
-      margin-bottom: 2rem;
+      margin: 2rem 0;
+    }
+
+    @media (max-width: 768px) {
+      > h2 {
+        margin-top: 1rem;
+      }
     }
 
     @media (min-width: 768px) {
@@ -20,5 +29,10 @@ export const Container = styled.div`
         margin-bottom: 4rem;
       }
     }
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
   }
 `

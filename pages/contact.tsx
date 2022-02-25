@@ -14,8 +14,7 @@ const Contact: NextPage = () => {
       text: [
         `If you liked my work and want to know more about me, talk about a
       project collaboration or just say hi, you can send an{" "}
-      <a href="mailto:hello@brunoalves.app">e-mail</a> to me, or you can find
-      me on:`,
+      <a href="mailto:hello@brunoalves.app">e-mail</a> to me, or you can find me on social media.`,
       ],
     },
     pt: {
@@ -25,7 +24,7 @@ const Contact: NextPage = () => {
         `Se você gostou do meu trabalho e quer saber mais sobre mim, conversar
       sobre uma colaboração em projetos ou apenas dizer um olá, você pode me
       enviar um <a href="mailto:hello@brunoalves.app">e-mail</a> ou me
-      chamar no :`,
+      procurar em minhas redes:`,
       ],
     },
   }

@@ -2,7 +2,8 @@ import styled from "styled-components"
 
 export const List = styled.ul`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(90px, max-content));
+  grid-template-columns: 1fr;
+  /* grid-template-columns: repeat(auto-fit, minmax(90px, max-content)); */
   gap: 2rem;
   list-style: none;
 `

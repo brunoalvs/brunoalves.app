@@ -30,6 +30,10 @@ export function ContactPage({ content }: ContactPageProps) {
         className="map"
         style={{
           backgroundColor: "#272449",
+          width: "100%",
+          minHeight: "250px",
+          height: "100%",
+          borderRadius: "20px",
         }}
       ></section>
     </Container>
