@@ -13,6 +13,7 @@ type HomePageProps = {
     title: string
     subtitle: string
     text: string[]
+    content: string[]
   }
 }
 
@@ -32,21 +33,9 @@ export function HomePage({ content }: HomePageProps) {
       </section>
       <ChevronsDown />
       <About>
-        <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. At sagittis
-          facilisis urna ante eget a sodales. Nisi, sapien pellentesque tortor
-          viverra. Malesuada volutpat id nec adipiscing mauris quam viverra. Sem
-          sollicitudin aliquam pharetra, elit amet sollicitudin. Eget tincidunt
-          diam ultricies aliquet tellus gravida. Ultricies rhoncus ut lobortis
-          amet, morbi risus nullam magna facilisis. Lectus phasellus quis amet
-          scelerisque id malesuada non eget.
-        </Text>
-        <Text>
-          Ipsum laoreet a nulla sem. Tellus feugiat fusce feugiat integer in
-          pulvinar pellentesque tortor. Nunc fusce lorem diam venenatis, enim.
-          Tempus interdum faucibus at odio justo ullamcorper tellus urna,
-          habitant.
-        </Text>
+        {content.about.map((text, index) => (
+          <Text key={index}>{parse(text)}</Text>
+        ))}
 
         <ExternalLink href={"/cv-brunoalves.pdf"}>My resume (pdf)</ExternalLink>
       </About>
