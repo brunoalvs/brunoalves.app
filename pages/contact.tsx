@@ -13,7 +13,7 @@ const Contact: NextPage = () => {
       subtitle: `Let's work together`,
       text: [
         `If you liked my work and want to know more about me, talk about a
-      project collaboration or just say hi, you can send an{" "}
+      project collaboration or just say hi, you can send an
       <a href="mailto:hello@brunoalves.app">e-mail</a> to me, or you can find me on social media.`,
       ],
     },
