@@ -7,15 +7,13 @@ import HeaderNavigation from "../../Molecules/HeaderNavigation"
 import InputLanguage from "../../Molecules/InputLanguage"
 import ToggleThemeButton from "../../Molecules/ToggleThemeButton"
 
-import { Container, TopHeader, Content, DevelopmentMode } from "./styled"
+import { Container, TopHeader, Content } from "./styled"
 
 const Layout: React.FC = ({ children }) => {
   const { pathname } = useRouter()
   const { darkMode, menuIsOpen, navigation } = React.useContext(LayoutContext)
   const [displayChildren, setDisplayChildren] = React.useState(children)
   const [transitionStage, setTransitionStage] = React.useState("fadeOut")
-
-  const [developmentMode, setDevelopmentMode] = React.useState(true)
 
   const [layoutTitle, setLayoutTitle] = React.useState(
     navigation.find((item) => item.url === pathname)?.name
@@ -69,12 +67,6 @@ const Layout: React.FC = ({ children }) => {
         data-theme={darkMode ? "dark" : "light"}
         data-menu={menuIsOpen}
       >
-        <DevelopmentMode isOpen={developmentMode}>
-          <button onClick={() => setDevelopmentMode(!developmentMode)}>
-            x
-          </button>
-          <p>This page is under development... bugs may be found.</p>
-        </DevelopmentMode>
         <TopHeader>
           <ToggleThemeButton />
           <InputLanguage />

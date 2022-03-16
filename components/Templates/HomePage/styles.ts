@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,12 +12,13 @@ export const Container = styled.div`
     display: grid;
     grid-template-columns: 1fr auto;
     grid-template-rows: 1fr auto;
+    gap: 1rem;
     justify-content: center;
     align-items: center;
 
-    > article {
+    > .content {
       width: 100%;
-      max-width: 575px;
+      max-width: 605px;
       display: flex;
       flex-direction: column;
       gap: 1rem;
@@ -26,10 +28,4 @@ export const Container = styled.div`
       }
     }
   }
-`
-
-export const About = styled.section`
-  display: grid;
-  gap: 1.2rem;
-  padding: 5rem 0 2rem;
 `

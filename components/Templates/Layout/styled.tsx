@@ -1,43 +1,5 @@
 import styled from "styled-components"
 
-export const DevelopmentMode = styled.div<{
-  isOpen: boolean
-}>`
-  display: flex;
-  gap: 0.5rem;
-  background-color: var(--primary-color);
-  color: var(--text-color);
-  padding: 0.2rem 1rem;
-  opacity: 0;
-  transform: scaleX(0) translateX(100%);
-  transform-origin: right;
-  transition: transform 0.2s, opacity 0.4s;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  z-index: 100;
-
-  > button {
-    cursor: pointer;
-    border: 0;
-    background-color: transparent;
-    color: var(--text-color);
-  }
-
-  ${(props) =>
-    props.isOpen &&
-    `
-    opacity: 1;
-    transform: scaleX(1) translateX(0);
-    transform-origin: right;
-    transition: transform 5s, opacity 0.4s;
-  `}
-
-  p {
-    font-size: 0.8rem;
-  }
-`
-
 export const Container = styled.main`
   background: var(--background-layout);
   color: var(--text-color);
@@ -85,6 +47,6 @@ export const Content = styled.section`
   }
 
   @media (min-width: 768px) {
-    padding: 2rem 5rem;
+    padding: 2rem 2rem;
   }
 `

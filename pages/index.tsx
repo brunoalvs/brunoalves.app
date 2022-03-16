@@ -19,7 +19,10 @@ const Home: NextPage = () => {
         experience.
         `,
       ],
-      about: [`Lorem ipsum`, `Dolor sit amet`],
+      resume: {
+        title: "My resume",
+        url: "/cv-brunoalves.pdf",
+      },
     },
     pt: {
       title: "Olá, meu nome é <strong>Bruno Alves</strong>.",
@@ -32,9 +35,10 @@ const Home: NextPage = () => {
         atenção a usabilidade e aos aspectos mais visuais.
         `,
       ],
-      about: [
-        `Comecei meus estudos em desenvolvimento web no inicio da minha adolescencia, eu era um adolescente que recentemente havia descoberto as maravilhas da internet.`,
-      ],
+      resume: {
+        title: "Meu currículo",
+        url: "/cv-brunoalves.pdf",
+      },
     },
   }
 
