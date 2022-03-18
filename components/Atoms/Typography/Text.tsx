@@ -1,4 +1,5 @@
 import React from "react"
+import DOMPurify from "dompurify"
 import styled from "styled-components"
 
 const Container = styled.p`
@@ -26,7 +27,7 @@ const Text: React.FC<Props> = ({ children, innerHTML }) => {
     return (
       <Container
         dangerouslySetInnerHTML={{
-          __html: innerHTML,
+          __html: DOMPurify.sanitize(innerHTML),
         }}
       />
     )
