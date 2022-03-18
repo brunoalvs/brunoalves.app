@@ -10,9 +10,8 @@
   "dependencies": {
     "@next/mdx": "^12.0.7",
     "axios": "^0.24.0",
-    "dompurify": "^2.3.5",
-    "eslint-plugin-risxss": "^2.1.0",
     "html-react-parser": "^1.4.8",
+    "isomorphic-dompurify": "^0.18.0",
     "next": "12.0.7",
     "react": "17.0.2",
     "react-dom": "17.0.2",
@@ -22,12 +21,12 @@
   },
   "devDependencies": {
     "@mdx-js/loader": "^2.0.0-rc.2",
-    "@types/dompurify": "^2.3.3",
     "@types/node": "16.11.11",
     "@types/react": "17.0.37",
     "@types/styled-components": "^5.1.17",
     "eslint": "8.4.0",
     "eslint-config-next": "12.0.7",
+    "eslint-plugin-risxss": "^2.1.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "raw-loader": "^4.0.2",
     "typescript": "4.5.2"

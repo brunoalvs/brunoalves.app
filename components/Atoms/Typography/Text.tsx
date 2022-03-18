@@ -1,5 +1,5 @@
 import React from "react"
-import DOMPurify from "dompurify"
+import DOMPurify from "isomorphic-dompurify"
 import styled from "styled-components"
 
 const Container = styled.p`
@@ -19,7 +19,7 @@ const Container = styled.p`
 `
 
 interface Props {
-  innerHTML?: string
+  innerHTML?: string | Node
 }
 
 const Text: React.FC<Props> = ({ children, innerHTML }) => {
