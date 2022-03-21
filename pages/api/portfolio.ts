@@ -19,7 +19,7 @@ type Data = {
   }
 }
 
-const data = {
+export const data = {
   en: {
     title: "Portfolio",
     jobs: [
