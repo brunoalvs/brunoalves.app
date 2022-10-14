@@ -1,23 +1,38 @@
-import axios from "axios"
-import useSWR from "swr"
-import { NextPage } from "next"
+import {
+  GetStaticProps,
+  GetServerSideProps,
+  GetServerSidePropsContext,
+} from "next"
 import { useContext } from "react"
-
 import { LayoutContext } from "../contexts/layout"
 
 import HeadingTitle from "../components/Atoms/Typography/HeadingTitle"
 import JobList from "../components/Molecules/JobList"
 
+import { data } from "./api/portfolio"
+
 import { Container } from "../styles/page.portfolio"
 
-const Portfolio: NextPage = () => {
-  const { language } = useContext(LayoutContext)
-  const fetcher = async (url: string) =>
-    await axios.get(url).then((res) => res.data)
-  const { data, error } = useSWR("/api/portfolio", fetcher)
+type ContentProps = {
+  title: string
+  jobs: {
+    title: string
+    content: string
+    url: string
+    urlLabel: string
+    image: string
+  }[]
+}
 
-  if (error) return <div>ERROR: Failed to load</div>
-  if (!data) return <></>
+interface PortfolioProps {
+  data: {
+    en: ContentProps
+    pt: ContentProps
+  }
+}
+
+export default function Portfolio({ data }: PortfolioProps) {
+  const { language } = useContext(LayoutContext)
 
   return (
     <Container>
@@ -27,4 +42,24 @@ const Portfolio: NextPage = () => {
   )
 }
 
-export default Portfolio
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  console.log("serverside", context.locale)
+
+  return {
+    props: {
+      data: data,
+    },
+  }
+}
+
+// export const getStaticProps: GetStaticProps = async () => {
+//   const res = await fetch("http://localhost:3000/api/portfolio")
+//   const data = await res.json()
+
+//   return {
+//     props: {
+//       data,
+//     },
+//     revalidate: 60 * 60 * 24, // 1 day
+//   }
+// }

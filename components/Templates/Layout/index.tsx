@@ -31,7 +31,9 @@ const Layout: React.FC = ({ children }) => {
   return (
     <>
       <Head>
-        <title>{layoutTitle ?? "Front End"} - brunoalves.app</title>
+        <title>
+          {layoutTitle ?? "Bruno Alves"} - UI/UX front end developer portfolio
+        </title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#010101" />
         <link rel="icon" href="/favicon.svg" />

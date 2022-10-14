@@ -45,7 +45,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: var(--primary-color);
+    color: var(--secondary-color);
   }
 
 
@@ -57,6 +57,9 @@ export const GlobalStyle = createGlobalStyle`
     --primary-color: #8368EE;
     --primary-color-hover: #a287f8;
     --secondary-color:  #68EEB6;
+    --secondary-color-hover: #7cf8a2;
+    --link-color: #7cf8a2;
+    --link-color-hover: #35C789;
     --input-language-bg: #35C789;
     --input-language-dot: #fff;
   }
@@ -69,6 +72,9 @@ export const GlobalStyle = createGlobalStyle`
     --primary-color: #6A4CCE;
     --primary-color-hover: #8368EE;
     --secondary-color:  #35C789;
+    --secondary-color-hover: #68EEB6;
+    --link-color: #6A4CCE;
+    --link-color-hover: #4f399b;
     --input-language-bg: #A3A9C2;
     --input-language-dot: #DDE0EA;
   }
@@ -88,13 +94,13 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     > a {
-      color: var(--primary-color);
+      color: var(--link-color);
       font-style: italic;
       transition: color 0.2s ease;
     }
 
     > a:hover {
-      color: var(--primary-color-hover);
+      color: var(--link-color-hover);
     }
 
     @media (min-width: 768px) {

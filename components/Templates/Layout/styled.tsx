@@ -23,10 +23,12 @@ export const TopHeader = styled.header`
 `
 
 export const Content = styled.section`
+  width: 100%;
+  max-width: 1200px;
+  min-height: calc(100vh - 150px);
   display: flex;
   justify-content: center;
-  width: 100%;
-  min-height: calc(100vh - 150px);
+  margin: 0 auto;
   padding: 1rem;
   opacity: 0;
   visibility: hidden;
@@ -45,6 +47,6 @@ export const Content = styled.section`
   }
 
   @media (min-width: 768px) {
-    padding: 2rem 5rem;
+    padding: 2rem 2rem;
   }
 `

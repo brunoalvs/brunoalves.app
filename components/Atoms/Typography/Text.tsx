@@ -1,4 +1,5 @@
-import React, { DOMAttributes } from "react"
+import React from "react"
+import DOMPurify from "isomorphic-dompurify"
 import styled from "styled-components"
 
 const Container = styled.p`
@@ -6,24 +7,19 @@ const Container = styled.p`
   font-size: 1.5rem;
   line-height: 160%;
 
-  > strong {
-    color: var(--primary-color);
-    font-weight: normal;
-  }
-
   > a {
-    color: var(--primary-color);
+    color: var(--link-color);
     font-style: italic;
     transition: color 0.2s ease;
   }
 
   > a:hover {
-    color: var(--primary-color-hover);
+    color: var(--link-color-hover);
   }
 `
 
 interface Props {
-  innerHTML?: DOMAttributes<HTMLParagraphElement>["dangerouslySetInnerHTML"]
+  innerHTML?: string | Node
 }
 
 const Text: React.FC<Props> = ({ children, innerHTML }) => {
@@ -31,7 +27,7 @@ const Text: React.FC<Props> = ({ children, innerHTML }) => {
     return (
       <Container
         dangerouslySetInnerHTML={{
-          __html: innerHTML.__html,
+          __html: DOMPurify.sanitize(innerHTML),
         }}
       />
     )
