@@ -7,7 +7,7 @@ const Avatar = () => {
       <div>
         <div>
           <Image
-            src="/images/avatar.png"
+            src="https://avatars.githubusercontent.com/u/13678214?v=4"
             alt="Avatar"
             layout="fill"
             objectFit="cover"
