@@ -1,13 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
-
 import { useRouter } from "next/router";
-// import { ThemeContext, useThemeApp } from "../../../contexts/theme";
-import { LayoutContext } from "../../../contexts/layout";
 
+import { LayoutContext } from "../../../contexts/layout";
 import nightIcon from "../../../public/icons/night.svg";
 import dayIcon from "../../../public/icons/day.svg";
 
-import { Container, Icon, Label } from "./styles";
+import * as S from "./styles";
 
 const ToggleThemeButton: React.FC = () => {
   const { locale } = useRouter();
@@ -32,12 +30,12 @@ const ToggleThemeButton: React.FC = () => {
   }, [locale]);
 
   return (
-    <Container onClick={() => toggleDarkMode()}>
-      <Icon src={darkMode ? dayIcon : nightIcon} aria-hidden />
-      <Label>
+    <S.Container onClick={() => toggleDarkMode()}>
+      <S.Icon src={darkMode ? dayIcon : nightIcon} aria-hidden />
+      <S.Label>
         {darkMode ? content[language].turnLight : content[language].turnDark}
-      </Label>
-    </Container>
+      </S.Label>
+    </S.Container>
   );
 };
 

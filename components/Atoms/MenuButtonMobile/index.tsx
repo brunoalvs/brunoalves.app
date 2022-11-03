@@ -1,9 +1,8 @@
-import React, { useState, useContext } from "react";
-import { Container } from "./styled";
-
+import React, { useContext } from "react";
+import * as S from "./styles";
 import { LayoutContext } from "../../../contexts/layout";
 
-const MenuButtonMobile: React.FC = ({}) => {
+const MenuButtonMobile: React.FC = ({ }) => {
   const { menuIsOpen, toggleMenu } = useContext(LayoutContext);
 
   const handleClick = () => {
@@ -11,7 +10,7 @@ const MenuButtonMobile: React.FC = ({}) => {
   };
 
   return (
-    <Container
+    <S.Container
       aria-label="Open navigation menu"
       data-active={menuIsOpen}
       onClick={() => handleClick()}
@@ -19,7 +18,7 @@ const MenuButtonMobile: React.FC = ({}) => {
       <span />
       <span />
       <span />
-    </Container>
+    </S.Container>
   );
 };
 

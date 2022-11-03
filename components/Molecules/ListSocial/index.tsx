@@ -1,9 +1,9 @@
-import { List, Item } from "./styled"
+import * as S from "./styles"
 
 const ListSocial = () => {
   return (
-    <List>
-      <Item>
+    <S.List>
+      <S.Item>
         <a href="mailto:hello@brunoalves.app">
           <svg
             viewBox="0 0 40 40"
@@ -18,8 +18,8 @@ const ListSocial = () => {
           </svg>
           <span>hello@brunoalves.app</span>
         </a>
-      </Item>
-      <Item>
+      </S.Item>
+      <S.Item>
         <a
           href="https://www.linkedin.com/in/brunoalvs/"
           target="_blank"
@@ -34,8 +34,8 @@ const ListSocial = () => {
           </svg>
           <span>LinkedIn</span>
         </a>
-      </Item>
-      <Item>
+      </S.Item>
+      <S.Item>
         <a
           href="https://github.com/brunoalvs"
           target="_blank"
@@ -50,8 +50,8 @@ const ListSocial = () => {
           </svg>
           <span>Github</span>
         </a>
-      </Item>
-    </List>
+      </S.Item>
+    </S.List>
   )
 }
 

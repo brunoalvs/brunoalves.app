@@ -4,8 +4,7 @@ import HeadingSubtitle from "../../Atoms/Typography/HeadingSubtitle"
 import HeadingTitle from "../../Atoms/Typography/HeadingTitle"
 import Text from "../../Atoms/Typography/Text"
 import Avatar from "../../Molecules/Avatar"
-
-import { Container } from "./styles"
+import * as S from "./styles"
 
 type HomePageProps = {
   content: {
@@ -21,7 +20,7 @@ type HomePageProps = {
 
 export function HomePage({ content }: HomePageProps) {
   return (
-    <Container>
+    <S.Container>
       <section className="presentation">
         <article className="content">
           <HeadingTitle>{parse(content.title)}</HeadingTitle>
@@ -30,11 +29,11 @@ export function HomePage({ content }: HomePageProps) {
             <Text key={index}>{parse(text)}</Text>
           ))}
           <ExternalLink href={content.resume.url}>
-            {content.resume.title} (pdf)
+            {content.resume.title}
           </ExternalLink>
         </article>
         <Avatar />
       </section>
-    </Container>
+    </S.Container>
   )
 }

@@ -7,7 +7,7 @@ import HeaderNavigation from "../../Molecules/HeaderNavigation"
 import InputLanguage from "../../Molecules/InputLanguage"
 import ToggleThemeButton from "../../Molecules/ToggleThemeButton"
 
-import { Container, TopHeader, Content } from "./styled"
+import * as S from "./styles"
 
 const Layout: React.FC = ({ children }) => {
   const { pathname } = useRouter()
@@ -32,7 +32,7 @@ const Layout: React.FC = ({ children }) => {
     <>
       <Head>
         <title>
-          {layoutTitle ?? "Bruno Alves"} - UI/UX front end developer portfolio
+          {layoutTitle} - Bruno Alves | Front-End Developer Portfolio
         </title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#010101" />
@@ -63,16 +63,16 @@ const Layout: React.FC = ({ children }) => {
           href="/favicon-16x16.png"
         />
       </Head>
-      <Container
+      <S.Container
         data-theme={darkMode ? "dark" : "light"}
         data-menu={menuIsOpen}
       >
-        <TopHeader>
+        <S.TopHeader>
           <ToggleThemeButton />
           <InputLanguage />
-        </TopHeader>
+        </S.TopHeader>
         <HeaderNavigation navigation={navigation} />
-        <Content
+        <S.Content
           onTransitionEnd={() => {
             if (transitionStage === "fadeOut") {
               setTransitionStage("fadeIn")
@@ -82,8 +82,8 @@ const Layout: React.FC = ({ children }) => {
           data-animation={transitionStage}
         >
           {displayChildren}
-        </Content>
-      </Container>
+        </S.Content>
+      </S.Container>
     </>
   )
 }

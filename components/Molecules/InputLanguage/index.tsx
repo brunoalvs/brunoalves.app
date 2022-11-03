@@ -1,7 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
-
-import { Container, Text } from "./styled";
+import * as S from "./styles";
 
 const InputLanguage = () => {
   const { locale, locales, push, pathname } = useRouter();
@@ -20,8 +19,8 @@ const InputLanguage = () => {
   };
 
   return (
-    <Container>
-      <Text>{locales ? locales[0] : ""}</Text>
+    <S.Container>
+      <S.Text>{locales ? locales[0] : ""}</S.Text>
       <input
         type="checkbox"
         value={locale}
@@ -30,8 +29,8 @@ const InputLanguage = () => {
         onClick={(event) => handleClick(event)}
       />
       <label htmlFor="languageChange" />
-      <Text>{locales ? locales[1] : ""}</Text>
-    </Container>
+      <S.Text>{locales ? locales[1] : ""}</S.Text>
+    </S.Container>
   );
 };
 
