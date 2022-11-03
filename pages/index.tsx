@@ -13,10 +13,10 @@ const Home: NextPage = () => {
       subtitle: "I develop mobile apps and websites",
       text: [
         `
-        I'm a <strong>Front End Developer</strong> and beginner to UI Designer
-        from Brazil based on Porto, Portugal. I'm interested in building web
-        and mobile apps with highlighting the visual aspects and user
-        experience.
+        I'm a Brazilian <strong>Front End Developer</strong> based in Porto, Portugal.
+        I'm focused web development mainly using <strong>React</strong> and <strong>Next.js</strong>.
+        I also interested in building mobile apps with <strong>React Native</strong> and
+        I'm always learning and trying new things.
         `,
       ],
       resume: {
@@ -29,10 +29,11 @@ const Home: NextPage = () => {
       subtitle: "Eu desenvolvo sites e aplicativos móveis",
       text: [
         `
-        Sou um <strong>Desenvolvedor Front End</strong> e aspirante a
-        Designer de Interfaces, nascido no Brasil e localizado no Porto,
-        Portugal. Sou focado em construir aplicações móveis e web com
-        atenção a usabilidade e aos aspectos mais visuais.
+        Sou um <strong>Desenvolvedor Front End</strong> brasileiro
+        localizado em Porto, Portugal. Sou focado em desenvolvimento web
+        usando principalmente <strong>React</strong> e <strong>Next.js</strong>.
+        Também estou interessado em construir aplicativos móveis com <strong>React Native</strong>
+        e estou sempre aprendendo e experimentando coisas novas.
         `,
       ],
       resume: {
