@@ -1,7 +1,7 @@
 import React from "react"
 import Link from "next/link"
 import { useRouter } from "next/router"
-import { StyledLink } from "./styled"
+import * as S from "./styles"
 
 const HeaderNavItem: React.FC<{
   href: string
@@ -13,10 +13,10 @@ const HeaderNavItem: React.FC<{
 
   return (
     <Link href={href} as={href} locale={router.locale} passHref>
-      <StyledLink onClick={onClick} data-active={isActive}>
+      <S.StyledLink onClick={onClick} data-active={isActive}>
         {children}
         <span />
-      </StyledLink>
+      </S.StyledLink>
     </Link>
   )
 }

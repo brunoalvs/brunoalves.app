@@ -3,8 +3,7 @@ import HeadingSubtitle from "../../Atoms/Typography/HeadingSubtitle"
 import HeadingTitle from "../../Atoms/Typography/HeadingTitle"
 import Text from "../../Atoms/Typography/Text"
 import ListSocial from "../../Molecules/ListSocial"
-
-import { Container } from "./styles"
+import * as S from "./styles"
 
 type ContactPageProps = {
   content: {
@@ -16,7 +15,7 @@ type ContactPageProps = {
 
 export function ContactPage({ content }: ContactPageProps) {
   return (
-    <Container>
+    <S.Container>
       <section className="content">
         <HeadingTitle>{content.title}</HeadingTitle>
         <HeadingSubtitle>{content.subtitle}</HeadingSubtitle>
@@ -36,6 +35,6 @@ export function ContactPage({ content }: ContactPageProps) {
           borderRadius: "20px",
         }}
       ></section>
-    </Container>
+    </S.Container>
   )
 }

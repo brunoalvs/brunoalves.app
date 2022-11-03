@@ -6,35 +6,33 @@ export const Container = styled.section`
   display: grid;
   gap: 1.5rem;
 
-  > h1 {
-    margin-bottom: 1rem;
-  }
 
-  > .grid {
-    display: grid;
-    gap: 1rem;
-
-    ul {
-      margin-left: 2rem;
-      padding: 2rem 0;
-    }
-
-    ul li {
-      font-size: 1.3rem;
-      padding: 0.65rem 0;
-    }
-
-    @media (min-width: 992px) {
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-
-      ul li {
-        font-size: 1.6rem;
-      }
-    }
-  }
 
   @media (min-width: 768px) {
-    gap: 2rem;
+    gap: 4rem;
   }
 `
+
+export const Grid = styled.article`
+  display: grid;
+  gap: 4rem;
+`;
+
+export const Title = styled.h2`
+  font-size: 2.5rem;
+  padding-bottom: 1rem;
+`;
+
+export const List = styled.ul`
+  display: grid;
+  gap: 0.75rem;
+  margin-left: 1rem;
+
+  li {
+    font-size: 1.5rem;
+  }
+
+  @media (min-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+`;

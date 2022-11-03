@@ -12,8 +12,12 @@ const Container = styled.h2`
   }
 `
 
-const HeadingSubtitle: React.FC = ({ children }) => {
-  return <Container>{children}</Container>
+interface HeadingSubtitleProps extends React.HTMLAttributes<HTMLHeadingElement> {
+  children: React.ReactNode
+}
+
+const HeadingSubtitle: React.FC<HeadingSubtitleProps> = ({ children, ...props }) => {
+  return <Container {...props}>{children}</Container>
 }
 
 export default HeadingSubtitle

@@ -1,9 +1,11 @@
 import Image from "next/image"
-import { Container } from "./styled"
+import * as S from "./styles"
 
-const Avatar = () => {
+interface AvatarProps extends React.HTMLAttributes<HTMLDivElement> { }
+
+const Avatar: React.FC<AvatarProps> = ({ ...props }) => {
   return (
-    <Container>
+    <S.Container {...props}>
       <div>
         <div>
           <Image
@@ -14,7 +16,7 @@ const Avatar = () => {
           />
         </div>
       </div>
-    </Container>
+    </S.Container>
   )
 }
 
