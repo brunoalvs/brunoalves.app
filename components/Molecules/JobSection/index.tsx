@@ -5,7 +5,7 @@ import { ExternalLink } from "../../Atoms/Typography/ExternalLink"
 import HeadingSubtitle from "../../Atoms/Typography/HeadingSubtitle"
 import Text from "../../Atoms/Typography/Text"
 
-import { Container, Content } from "./styles"
+import * as S from "./styles"
 
 const JobSection: React.FC<IDataJob> = ({
   title,
@@ -15,7 +15,7 @@ const JobSection: React.FC<IDataJob> = ({
   image,
 }) => {
   return (
-    <Container>
+    <S.Container>
       <Image
         src={image}
         alt={title}
@@ -24,12 +24,12 @@ const JobSection: React.FC<IDataJob> = ({
         layout="responsive"
         priority={true}
       />
-      <Content>
+      <S.Content>
         <HeadingSubtitle>{title}</HeadingSubtitle>
         <Text innerHTML={content} />
         <ExternalLink href={url}>{urlLabel}</ExternalLink>
-      </Content>
-    </Container>
+      </S.Content>
+    </S.Container>
   )
 }
 

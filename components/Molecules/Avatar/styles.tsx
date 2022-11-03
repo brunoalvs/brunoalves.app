@@ -20,6 +20,7 @@ export const Container = styled.section`
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  background-color: #8368ee;
 
   animation: ${fadeIn} 0.35s linear;
 
@@ -37,8 +38,6 @@ export const Container = styled.section`
     max-height: 350px;
   }
 
-  background: #8368ee;
-
   div {
     width: 100%;
     height: 100%;
@@ -50,7 +49,7 @@ export const Container = styled.section`
     transform: scale(0.95);
 
     > div {
-      background: #483d8b;
+      background-color: #483d8b;
       transform: scale(0.95);
 
       img {

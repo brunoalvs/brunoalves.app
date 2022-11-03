@@ -1,9 +1,9 @@
 import Image from "next/image"
-import { Container } from "./styled"
+import * as S from "./styles"
 
 const Avatar = () => {
   return (
-    <Container>
+    <S.Container>
       <div>
         <div>
           <Image
@@ -14,7 +14,7 @@ const Avatar = () => {
           />
         </div>
       </div>
-    </Container>
+    </S.Container>
   )
 }
 

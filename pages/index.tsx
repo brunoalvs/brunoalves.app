@@ -20,8 +20,8 @@ const Home: NextPage = () => {
         `,
       ],
       resume: {
-        title: "My resume",
-        url: "/cv-brunoalves.pdf",
+        title: "LinkedIn",
+        url: "https://linkedin.com/in/brunoalvs",
       },
     },
     pt: {
@@ -37,8 +37,8 @@ const Home: NextPage = () => {
         `,
       ],
       resume: {
-        title: "Meu currículo",
-        url: "/cv-brunoalves.pdf",
+        title: "LinkedIn",
+        url: "https://linkedin.com/in/brunoalvs",
       },
     },
   }

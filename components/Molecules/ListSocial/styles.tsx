@@ -2,9 +2,8 @@ import styled from "styled-components"
 
 export const List = styled.ul`
   display: grid;
-  grid-template-columns: 1fr;
-  /* grid-template-columns: repeat(auto-fit, minmax(90px, max-content)); */
   gap: 2rem;
+  grid-template-columns: 1fr;
   list-style: none;
 `
 
@@ -18,8 +17,8 @@ export const Item = styled.li`
     > svg {
       width: 50px;
       height: 50px;
-      transition: transform 0.2s ease-in-out;
       margin-right: 1rem;
+      transition: transform 0.2s ease-in-out;
 
       path {
         fill: var(--text-color);

@@ -1,9 +1,9 @@
 import { useContext } from "react"
 import { GetStaticProps } from "next"
-import { LayoutContext } from "../contexts/layout"
 import { data } from "./api/portfolio"
 import type { IDataJob } from './api/portfolio'
 
+import { LayoutContext } from "../contexts/layout"
 import HeadingTitle from "../components/Atoms/Typography/HeadingTitle"
 import JobList from "../components/Molecules/JobList"
 
