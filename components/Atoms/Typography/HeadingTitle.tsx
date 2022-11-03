@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 const Container = styled.h1`
   color: var(--text-color);
-  font-size: 2.625rem;
+  font-size: 2.45rem;
   font-weight: 700;
   line-height: 100%;
 
@@ -17,8 +17,12 @@ const Container = styled.h1`
   }
 `
 
-const HeadingTitle: React.FC = ({ children }) => {
-  return <Container>{children}</Container>
+interface HeadingTitleProps extends React.HTMLAttributes<HTMLHeadingElement> {
+  children: React.ReactNode
+}
+
+const HeadingTitle: React.FC<HeadingTitleProps> = ({ children, ...props }) => {
+  return <Container {...props}>{children}</Container>
 }
 
 export default HeadingTitle
