@@ -32,7 +32,7 @@ const Layout: React.FC = ({ children }) => {
     <>
       <Head>
         <title>
-          {layoutTitle ?? "Bruno Alves"} - UI/UX front end developer portfolio
+          {layoutTitle} - Bruno Alves | Front-End Developer Portfolio
         </title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#010101" />
