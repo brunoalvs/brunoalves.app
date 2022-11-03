@@ -5,27 +5,30 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+`
 
-  .presentation {
-    width: 100%;
-    min-height: calc(90vh - 150px);
-    display: grid;
+export const Presentation = styled.section`
+  width: 100%;
+  min-height: calc(90vh - 150px);
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 768px) {
     grid-template-columns: 1fr auto;
-    grid-template-rows: 1fr auto;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
+  }
+`
 
-    > .content {
-      width: 100%;
-      max-width: 605px;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
+export const Content = styled.section`
+  width: 100%;
+  max-width: 605px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 
-      > h2 {
-        margin-bottom: 2rem;
-      }
-    }
+  > .subtitle {
+    padding-bottom: 2rem;
   }
 `
