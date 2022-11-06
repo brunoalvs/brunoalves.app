@@ -27,7 +27,7 @@ const JobSection: React.FC<IDataJob> = ({
       <S.Content>
         <HeadingSubtitle>{title}</HeadingSubtitle>
         <Text innerHTML={content} />
-        <ExternalLink href={url}>{urlLabel}</ExternalLink>
+        <ExternalLink href={url} target="_blank">{urlLabel}</ExternalLink>
       </S.Content>
     </S.Container>
   )
