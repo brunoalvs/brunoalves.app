@@ -50,7 +50,7 @@ export const data = {
       {
         title: "Brastemp - Retro",
         content:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consecteturconsectetur, nisi nisi aliquet nunc, eget consect",
+          "The Brastemp Retro is a line of products that brings the 50s and 60s style to the present day. The landing page was created to show the product's details and to be part of the official Brastemp store.",
         url: "https://www.brastemp.com.br/linhas-especiais/brastemp-retro",
         urlLabel: "See the project",
         image: "/images/jobs/brastemp-retro.png",
@@ -58,7 +58,7 @@ export const data = {
       {
         title: "Refrigerator Product Page - Consul",
         content:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consecteturconsectetur, nisi nisi aliquet nunc, eget consect",
+          "Showing the Consul's refrigerator, this page is responsive and has a intuitive and modern design. With details of the product, it is part of the official Consul store.",
         url: "https://www.consul.com.br/geladeira-consul-frost-free-duplex-450-litros-branca-crm56hb",
         urlLabel: "See the project",
         image: "/images/jobs/consul-geladeira.png",
@@ -66,7 +66,7 @@ export const data = {
       {
         title: "Páginas Coloridas - Coral/AkzoNobel",
         content:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consecteturconsectetur, nisi nisi aliquet nunc, eget consect",
+          "A platform that connects painters and customers, allowing the painter to create a profile and show their work, and the customer to find the painter closest to their location.",
         url: "https://loja.consul.com.br/paginas-coloridas-consul",
         urlLabel: "See the project",
         image: "/images/jobs/paginas-coloridas.png",
@@ -103,7 +103,7 @@ export const data = {
       {
         title: "Brastemp - Retro",
         content:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consecteturconsectetur, nisi nisi aliquet nunc, eget consect",
+          "A linha Brastemp Retrô resgata uma lembrança vintage com o clássico logo da “Brastemp” e o puxador característico, ambos originais da marca dos anos 50. Além disso, traz cores que representam o espírito vintage em harmonia com um ambiente contemporâneo.",
         url: "https://www.brastemp.com.br/linhas-especiais/brastemp-retro",
         urlLabel: "Visite o site",
         image: "/images/jobs/brastemp-retro.png",
@@ -111,7 +111,7 @@ export const data = {
       {
         title: "Página de Produto Geladeira - Consul",
         content:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consecteturconsectetur, nisi nisi aliquet nunc, eget consect",
+          "Apresentando a geladeira Consul, a página de produto é responsiva e possui um layout moderno e intuitivo, com informações detalhadas sobre o produto é uma parte da loja oficial da Consul.",
         url: "https://www.consul.com.br/geladeira-consul-frost-free-duplex-450-litros-branca-crm56hb",
         urlLabel: "Visite o site",
         image: "/images/jobs/consul-geladeira.png",
@@ -119,7 +119,7 @@ export const data = {
       {
         title: "Páginas Coloridas - Coral/AkzoNobel",
         content:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consecteturconsectetur, nisi nisi aliquet nunc, eget consect",
+          "Uma espaço que conecta pintores certificados com clientes com o objetivo de tornar a procura por esses serviços mais fácil e eficiente.",
         url: "https://paginascoloridas.com.br/",
         urlLabel: "Visite o site",
         image: "/images/jobs/paginas-coloridas.png",

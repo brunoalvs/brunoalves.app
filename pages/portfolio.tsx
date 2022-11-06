@@ -33,9 +33,13 @@ export default function Portfolio({ content }: PortfolioProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
+  const request = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/portfolio`)
+  const content = await request.json()
+
+
   return {
     props: {
-      content: data,
+      content,
     },
     revalidate: 60 * 60 * 24, // 1 day
   }
