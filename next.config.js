@@ -13,4 +13,15 @@ module.exports = {
     styledComponents: true,
   },
   swcMinify: true,
+  experimental: {
+    fontLoaders: [
+      {
+        loader: "@next/font/google",
+        options: {
+          families: ["Fira Sans Condensed"],
+          subsets: ["latin"],
+        },
+      },
+    ],
+  },
 }

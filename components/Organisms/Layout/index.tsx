@@ -9,11 +9,11 @@ import ToggleThemeButton from "../../Molecules/ToggleThemeButton"
 
 import * as S from "./styles"
 
-interface ILayoutProps {
+interface ILayoutProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode
 }
 
-const Layout = ({ children }: ILayoutProps) => {
+const Layout = ({ children, ...props }: ILayoutProps) => {
   const { pathname, locale } = useRouter()
   const { darkMode, menuIsOpen, navigation } = useContext(LayoutContext)
 
@@ -27,8 +27,11 @@ const Layout = ({ children }: ILayoutProps) => {
 
   useEffect(() => {
     setLayoutTitle(navigation.find((item) => item.url === pathname)?.name)
+  }, [pathname, navigation])
+
+  useEffect(() => {
     children !== displayChildren && setTransitionStage("fadeOut")
-  }, [children, setDisplayChildren, displayChildren, navigation, pathname])
+  }, [children, setDisplayChildren, displayChildren])
 
   return (
     <>
@@ -42,6 +45,11 @@ const Layout = ({ children }: ILayoutProps) => {
         <meta name="keywords" content="Developer, Front-End, Portfolio, Bruno Alves, Next.js, React Developer" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#010101" />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="author" content="Bruno Alves" />
+        <meta name="language" content={locale === "en" ? "English" : "Português"} />
+
         <link rel="icon" href="/favicon.svg" />
 
         <link
@@ -72,6 +80,7 @@ const Layout = ({ children }: ILayoutProps) => {
       <S.Container
         data-theme={darkMode ? "dark" : "light"}
         data-menu={menuIsOpen}
+        {...props}
       >
         <S.TopHeader>
           <ToggleThemeButton />
