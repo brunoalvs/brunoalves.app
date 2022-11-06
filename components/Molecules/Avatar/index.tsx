@@ -11,8 +11,7 @@ const Avatar: React.FC<AvatarProps> = ({ ...props }) => {
           <Image
             src="https://avatars.githubusercontent.com/u/13678214?v=4"
             alt="Avatar"
-            layout="fill"
-            objectFit="cover"
+            fill
           />
         </div>
       </div>
