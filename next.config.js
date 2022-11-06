@@ -1,11 +1,7 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
   images: {
-    domains: [
-      "via.placeholder.com",
-      "images.unsplash.com",
-      "avatars.githubusercontent.com",
-    ],
+    domains: ["avatars.githubusercontent.com"],
   },
   reactStrictMode: true,
   i18n: {
@@ -13,4 +9,8 @@ module.exports = {
     defaultLocale: "en",
     localeDetection: true,
   },
+  compiler: {
+    styledComponents: true,
+  },
+  swcMinify: true,
 }
