@@ -1,6 +1,7 @@
+import NextLink from "next/link";
 import styled from "styled-components";
 
-export const StyledLink = styled.a`
+export const Link = styled(NextLink)`
   font-size: 2rem;
   text-decoration: none;
   position: relative;

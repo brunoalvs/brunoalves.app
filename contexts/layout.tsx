@@ -58,16 +58,18 @@ const defaultNavigation: INavigation = {
 
 export const LayoutContext = createContext<LayoutContextType>({
   isLoading: true,
-  handleLoading: () => {},
+  handleLoading: () => { },
   menuIsOpen: false,
-  toggleMenu: () => {},
+  toggleMenu: () => { },
   darkMode: false,
-  toggleDarkMode: () => {},
+  toggleDarkMode: () => { },
   language: "en",
   navigation: defaultNavigation["en"].list,
 })
 
-export const LayoutProvider: FC = ({ children }) => {
+export const LayoutProvider = ({ children }: {
+  children: React.ReactNode
+}) => {
   const [isLoading, setIsLoading] = useState(true)
   const [menuIsOpen, setMenuIsOpen] = useState(false)
   const toggleMenu = () => setMenuIsOpen(!menuIsOpen)
@@ -87,16 +89,12 @@ export const LayoutProvider: FC = ({ children }) => {
   const { locale, pathname } = useRouter()
   const [language, setLanguage] = useState<"en" | "pt">("en")
 
-  const getLanguage = () => {
+  useEffect(() => {
     if (locale === "pt") {
       setLanguage("pt")
     } else {
       setLanguage("en")
     }
-  }
-
-  useEffect(() => {
-    getLanguage()
   }, [language, locale])
 
   const [navigation, setNavigation] = useState<INavigationObject[]>(

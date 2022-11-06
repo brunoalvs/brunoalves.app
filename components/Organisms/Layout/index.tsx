@@ -1,6 +1,6 @@
+import { useContext, useEffect, useState } from "react"
 import Head from "next/head"
 import { useRouter } from "next/router"
-import React, { useEffect } from "react"
 
 import { LayoutContext } from "../../../contexts/layout"
 import HeaderNavigation from "../../Molecules/HeaderNavigation"
@@ -9,15 +9,17 @@ import ToggleThemeButton from "../../Molecules/ToggleThemeButton"
 
 import * as S from "./styles"
 
-const Layout: React.FC = ({ children }) => {
-  const { pathname } = useRouter()
-  const { darkMode, menuIsOpen, navigation } = React.useContext(LayoutContext)
-  const [displayChildren, setDisplayChildren] = React.useState(children)
-  const [transitionStage, setTransitionStage] = React.useState("fadeOut")
+interface ILayoutProps {
+  children: React.ReactNode
+}
 
-  const [layoutTitle, setLayoutTitle] = React.useState(
-    navigation.find((item) => item.url === pathname)?.name
-  )
+const Layout = ({ children }: ILayoutProps) => {
+  const { pathname, locale } = useRouter()
+  const { darkMode, menuIsOpen, navigation } = useContext(LayoutContext)
+
+  const [displayChildren, setDisplayChildren] = useState(children)
+  const [transitionStage, setTransitionStage] = useState("fadeOut")
+  const [layoutTitle, setLayoutTitle] = useState(navigation.find((item) => item.url === pathname)?.name)
 
   useEffect(() => {
     setTransitionStage("fadeIn")
@@ -34,6 +36,10 @@ const Layout: React.FC = ({ children }) => {
         <title>
           {layoutTitle} - Bruno Alves | Front-End Developer Portfolio
         </title>
+        <meta name="description" content={
+          locale === "en" ? "Bruno Alves is a Front-End Developer based in Brazil. He has been working with web development since 2018. He is passionate about technology and loves to learn new things." : "Bruno Alves é um Desenvolvedor Front-End baseado no Brasil. Ele tem trabalhado com desenvolvimento web desde 2018. Ele é apaixonado por tecnologia e adora aprender coisas novas."
+        } />
+        <meta name="keywords" content="Developer, Front-End, Portfolio, Bruno Alves, Next.js, React Developer" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#010101" />
         <link rel="icon" href="/favicon.svg" />
@@ -71,13 +77,11 @@ const Layout: React.FC = ({ children }) => {
           <ToggleThemeButton />
           <InputLanguage />
         </S.TopHeader>
-        <HeaderNavigation navigation={navigation} />
+        <HeaderNavigation />
         <S.Content
           onTransitionEnd={() => {
-            if (transitionStage === "fadeOut") {
-              setTransitionStage("fadeIn")
-              setDisplayChildren(children)
-            }
+            setTransitionStage("fadeIn")
+            setDisplayChildren(children)
           }}
           data-animation={transitionStage}
         >

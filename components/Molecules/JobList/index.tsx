@@ -8,7 +8,7 @@ type Props = {
   jobs: IDataJob[]
 }
 
-const JobList: NextPage<Props> = ({ jobs }) => {
+const JobList: React.FC<Props> = ({ jobs }) => {
   return (
     <S.Container>
       {jobs.map((job: IDataJob, index: number) => (

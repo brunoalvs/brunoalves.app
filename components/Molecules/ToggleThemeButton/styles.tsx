@@ -9,9 +9,11 @@ export const Container = styled.button`
   align-items: center;
   grid-template-columns: 32px 1fr;
 `;
+
 export const Icon = styled(Image)`
-  border: 1px dashed hotpink;
+  /* border: 1px dashed yellow; */
 `;
+
 export const Label = styled.span`
   max-width: 4.7rem;
   color: var(--text-color);

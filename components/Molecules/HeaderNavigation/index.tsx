@@ -1,28 +1,26 @@
-import React, { useContext } from "react"
-
+import { useContext, useEffect, useState } from "react"
 import HeaderNavItem from "../../Atoms/HeaderNavItem"
 import Logo from "../../Atoms/Logo"
 import MenuButtonMobile from "../../Atoms/MenuButtonMobile"
 import { LayoutContext } from "../../../contexts/layout"
-import { INavigationObject } from "../../../types/layout"
-
 import * as S from "./styles"
 
-type Props = {
-  navigation: INavigationObject[]
-}
+const HeaderNavigation = () => {
+  const { menuIsOpen, navigation, toggleMenu } = useContext(LayoutContext)
+  const [isOpen, setIsOpen] = useState(false)
 
-const HeaderNavigation: React.FC<Props> = ({ navigation }) => {
-  const { menuIsOpen, toggleMenu } = useContext(LayoutContext)
+  useEffect(() => {
+    setIsOpen(menuIsOpen)
+  }, [menuIsOpen])
 
   return (
     <S.Container>
       <Logo />
       <MenuButtonMobile />
-      <S.Navigation data-active={menuIsOpen}>
-        {navigation.map((item, index) => (
-          <HeaderNavItem onClick={toggleMenu} key={index} href={item.url}>
-            {item.name}
+      <S.Navigation data-active={isOpen}>
+        {navigation.map((menuItem, index) => (
+          <HeaderNavItem onClick={toggleMenu} key={index} href={menuItem.url}>
+            {menuItem.name}
           </HeaderNavItem>
         ))}
       </S.Navigation>

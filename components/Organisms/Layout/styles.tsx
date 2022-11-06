@@ -18,6 +18,7 @@ export const TopHeader = styled.header`
   align-items: center;
   background: var(--background-topheader);
   position: sticky;
+  padding: 0 .5rem;
   top: 0;
   z-index: 10;
 `
