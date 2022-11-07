@@ -16,14 +16,14 @@ const JobSection: React.FC<IDataJob> = ({
 }) => {
   return (
     <S.Container>
-      <Image
-        src={image}
-        alt={title}
-        width={300}
-        height={205}
-        layout="responsive"
-        priority={true}
-      />
+      <S.Figure>
+        <Image
+          src={image}
+          alt={title}
+          width={300}
+          height={205}
+        />
+      </S.Figure>
       <S.Content>
         <HeadingSubtitle>{title}</HeadingSubtitle>
         <Text innerHTML={content} />

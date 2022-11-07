@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const Container = styled.a`
+export const Container = styled("a")`
   color: var(--secondary-color);
   font-size: 1.5rem;
   font-weight: bold;
