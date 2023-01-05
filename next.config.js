@@ -1,17 +1,21 @@
 /** @type {import('next').NextConfig} */
-module.exports = {
-  images: {
-    domains: ["avatars.githubusercontent.com"],
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+})
+
+module.exports = withBundleAnalyzer({
+  compiler: {
+    styledComponents: true,
   },
-  reactStrictMode: true,
   i18n: {
     locales: ["en", "pt"],
     defaultLocale: "en",
     localeDetection: true,
   },
-  compiler: {
-    styledComponents: true,
+  images: {
+    domains: ["avatars.githubusercontent.com"],
   },
+  reactStrictMode: true,
   swcMinify: true,
   experimental: {
     fontLoaders: [
@@ -24,4 +28,4 @@ module.exports = {
       },
     ],
   },
-}
+})
