@@ -10,7 +10,7 @@ interface HomePageProps {
   content: {
     title: string
     subtitle: string
-    text: string[]
+    text: string
     resume: {
       title: string
       url: string
@@ -24,10 +24,10 @@ export function HomePage({ content }: HomePageProps) {
       <S.Presentation>
         <S.Content>
           <HeadingTitle>{parse(content.title)}</HeadingTitle>
-          <HeadingSubtitle className="subtitle">{content.subtitle}</HeadingSubtitle>
-          {content.text.map((text, index) => (
-            <Text key={index}>{parse(text)}</Text>
-          ))}
+          <HeadingSubtitle className="subtitle">
+            {content.subtitle}
+          </HeadingSubtitle>
+          <Text>{parse(content.text)}</Text>
           <ExternalLink href={content.resume.url}>
             {content.resume.title}
           </ExternalLink>

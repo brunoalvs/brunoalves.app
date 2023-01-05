@@ -1,0 +1,25 @@
+{
+  "pagetitle": "Skills - Bruno Alves | Front-End Developer Portfolio",
+  "title": "Skills",
+  "skills": [
+    {
+      "title": "Development",
+      "text": "In these years as a front end developer, I had the pleasure to participate in several projects for a wide range of clients. My know-how allows me to build products and deliver solid solutions to the client's projects.",
+      "items": [
+        "HTML & CSS",
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Next.js",
+        "React Native",
+        "CSS Modules",
+        "SASS & Stylus",
+        "Styled Components",
+        "Node.js",
+        "Express.js",
+        "Unit Tests (Jest & React Testing Library)",
+        "Acessibility"
+      ]
+    }
+  ]
+}
