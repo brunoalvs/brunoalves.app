@@ -3,12 +3,14 @@ import type { NextPage } from "next"
 
 import { LayoutContext } from "../contexts/layout"
 import { HomePage } from "../components/Templates/HomePage"
+import Head from "next/head"
 
 const Home: NextPage = () => {
   const { language } = useContext(LayoutContext)
 
   const content = {
     en: {
+      pagetitle: "Home - Bruno Alves | Front-End Developer Portfolio",
       title: "Hello, my name is <strong>Bruno Alves</strong>.",
       subtitle: "I develop mobile apps and websites",
       text: [
@@ -25,6 +27,7 @@ const Home: NextPage = () => {
       },
     },
     pt: {
+      pagetitle: "Início - Bruno Alves | Portfólio de Desenvolvedor Front-End",
       title: "Olá, meu nome é <strong>Bruno Alves</strong>.",
       subtitle: "Eu desenvolvo sites e aplicativos móveis",
       text: [
@@ -45,6 +48,9 @@ const Home: NextPage = () => {
 
   return (
     <>
+      <Head>
+        <title>{content[language].pagetitle}</title>
+      </Head>
       <HomePage content={content[language]} />
     </>
   )

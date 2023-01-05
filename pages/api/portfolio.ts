@@ -21,6 +21,7 @@ type Data = {
 
 export const data = {
   en: {
+    pagetitle: "Portfolio - Bruno Alves | Front-end Developer",
     title: "Portfolio",
     jobs: [
       {
@@ -74,6 +75,7 @@ export const data = {
     ],
   },
   pt: {
+    pagetitle: "Portfólio - Bruno Alves | Desenvolvedor Front-end",
     title: "Portfólio",
     jobs: [
       {

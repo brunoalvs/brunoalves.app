@@ -3,12 +3,14 @@ import { useContext } from "react"
 import { LayoutContext } from "../contexts/layout"
 
 import { ContactPage } from "../components/Templates/ContactPage"
+import Head from "next/head"
 
 const Contact: NextPage = () => {
   const { language } = useContext(LayoutContext)
 
   const content = {
     en: {
+      pagetitle: "Contact - Bruno Alves | Front-End Developer Portfolio",
       title: "Get in Touch",
       subtitle: `Let's work together`,
       text: [
@@ -18,6 +20,7 @@ const Contact: NextPage = () => {
       ],
     },
     pt: {
+      pagetitle: "Contato - Bruno Alves | Portfólio de Desenvolvedor Front-End",
       title: "Entre em Contato",
       subtitle: "Vamos trabalhar juntos",
       text: [
@@ -31,6 +34,9 @@ const Contact: NextPage = () => {
 
   return (
     <>
+      <Head>
+        <title>{content[language].pagetitle}</title>
+      </Head>
       <ContactPage content={content[language]} />
     </>
   )

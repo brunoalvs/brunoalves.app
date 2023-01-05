@@ -4,12 +4,14 @@ import { useContext } from "react"
 import { LayoutContext } from "../contexts/layout"
 
 import { SkillsPage } from "../components/Templates/SkillsPage"
+import Head from "next/head"
 
 const Skills: NextPage = () => {
   const { language } = useContext(LayoutContext)
 
   const content = {
     en: {
+      pagetitle: "Skills - Bruno Alves | Front-End Developer Portfolio",
       title: "Skills",
       skills: [
         {
@@ -34,10 +36,12 @@ const Skills: NextPage = () => {
             "Unit Tests (Jest & React Testing Library)",
             "Acessibility",
           ],
-        }
+        },
       ],
     },
     pt: {
+      pagetitle:
+        "Habilidades - Bruno Alves | Portfólio de Desenvolvedor Front-End",
       title: "Habilidades",
       skills: [
         {
@@ -60,12 +64,19 @@ const Skills: NextPage = () => {
             "Testes Unitários (Jest & React Testing Library)",
             "Acessibilidade (ARIA) e WCAG",
           ],
-        }
+        },
       ],
     },
   }
 
-  return <SkillsPage content={content[language]} />
+  return (
+    <>
+      <Head>
+        <title>{content[language].pagetitle}</title>
+      </Head>
+      <SkillsPage content={content[language]} />
+    </>
+  )
 }
 
 export default Skills

@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import { useRouter } from "next/router"
-import { createContext, FC, useEffect, useState } from "react"
+import { createContext, useEffect, useState } from "react"
 import { INavigation, INavigationObject } from "../types/layout"
 
 type LayoutContextType = {
@@ -58,18 +59,16 @@ const defaultNavigation: INavigation = {
 
 export const LayoutContext = createContext<LayoutContextType>({
   isLoading: true,
-  handleLoading: () => { },
+  handleLoading: () => {},
   menuIsOpen: false,
-  toggleMenu: () => { },
+  toggleMenu: () => {},
   darkMode: false,
-  toggleDarkMode: () => { },
+  toggleDarkMode: () => {},
   language: "en",
   navigation: defaultNavigation["en"].list,
 })
 
-export const LayoutProvider = ({ children }: {
-  children: React.ReactNode
-}) => {
+export const LayoutProvider = ({ children }: { children: React.ReactNode }) => {
   const [isLoading, setIsLoading] = useState(true)
   const [menuIsOpen, setMenuIsOpen] = useState(false)
   const toggleMenu = () => setMenuIsOpen(!menuIsOpen)
