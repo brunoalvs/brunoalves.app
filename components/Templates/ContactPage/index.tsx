@@ -5,7 +5,7 @@ import Text from "../../Atoms/Typography/Text"
 import ListSocial from "../../Molecules/ListSocial"
 import * as S from "./styles"
 
-type ContactPageProps = {
+interface ContactPageProps {
   content: {
     title: string
     subtitle: string

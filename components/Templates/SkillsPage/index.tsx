@@ -2,7 +2,7 @@ import parse from "html-react-parser"
 import HeadingTitle from "../../Atoms/Typography/HeadingTitle"
 import * as S from "./styles"
 
-type SkillsPageProps = {
+interface SkillsPageProps {
   content: {
     title: string
     skills: {
