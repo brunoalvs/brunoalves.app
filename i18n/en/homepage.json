@@ -1,0 +1,10 @@
+{
+  "pagetitle": "Home - Bruno Alves | Front-End Developer Portfolio",
+  "title": "Hello, my name is <strong>Bruno Alves</strong>.",
+  "subtitle": "I develop mobile apps and websites",
+  "text": "I'm a Brazilian <strong>Front End Developer</strong> based in Porto, Portugal. I'm focused web development mainly using <strong>React</strong> and <strong>Next.js</strong>. I also interested in building mobile apps with <strong>React Native</strong> and I'm always learning and trying new things.",
+  "resume": {
+    "title": "LinkedIn",
+    "url": "https://linkedin.com/in/brunoalvs"
+  }
+}

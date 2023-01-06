@@ -3,6 +3,7 @@ import styled from "styled-components"
 export const Container = styled.p`
   color: var(--text-color);
   font-size: 1.5rem;
+  font-weight: 300;
   line-height: 160%;
 
   > a {

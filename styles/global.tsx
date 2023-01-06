@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components"
 
 export const GlobalStyle = createGlobalStyle`
-  @font-face {
+  /* @font-face {
     font-display: swap;
     font-family: 'Fira Sans Condensed';
     font-weight: 300;
@@ -20,7 +20,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Fira Sans Condensed';
     font-weight: bold;
     src: url('/fonts/FiraSansCondensed-Bold.woff2') format('woff2');
-  }
+  } */
 
   *, *:before, *:after {
     box-sizing: inherit;

@@ -5,11 +5,11 @@ import Text from "../../Atoms/Typography/Text"
 import ListSocial from "../../Molecules/ListSocial"
 import * as S from "./styles"
 
-type ContactPageProps = {
+interface ContactPageProps {
   content: {
     title: string
     subtitle: string
-    text: string[]
+    text: string
   }
 }
 
@@ -20,9 +20,7 @@ export function ContactPage({ content }: ContactPageProps) {
         <HeadingTitle>{content.title}</HeadingTitle>
         <HeadingSubtitle>{content.subtitle}</HeadingSubtitle>
 
-        {content.text.map((text, index) => (
-          <Text key={index}>{parse(text)}</Text>
-        ))}
+        <Text>{parse(content.text)}</Text>
         <ListSocial />
       </section>
       <section

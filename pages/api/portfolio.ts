@@ -1,26 +1,20 @@
 import type { NextApiRequest, NextApiResponse } from "next"
-
-export interface IDataJob {
-  title: string
-  content: string
-  url: string
-  urlLabel: string
-  image: string
-}
+import type { IJob } from '../../types/portfolio'
 
 type Data = {
   en: {
     title: string
-    jobs: IDataJob[]
+    jobs: IJob[]
   }
   pt: {
     title: string
-    jobs: IDataJob[]
+    jobs: IJob[]
   }
 }
 
 export const data = {
   en: {
+    pagetitle: "Portfolio - Bruno Alves | Front-end Developer",
     title: "Portfolio",
     jobs: [
       {
@@ -74,6 +68,7 @@ export const data = {
     ],
   },
   pt: {
+    pagetitle: "Portfólio - Bruno Alves | Desenvolvedor Front-end",
     title: "Portfólio",
     jobs: [
       {
