@@ -1,16 +1,15 @@
-import { IDataJob } from "../../../pages/api/portfolio"
+import type { IJob } from "../../../types/portfolio"
 import JobSection from "../JobSection"
-
 import * as S from "./styles"
 
 interface JobListProps {
-  jobs: IDataJob[]
+  jobs: IJob[]
 }
 
 const JobList = ({ jobs }: JobListProps) => {
   return (
     <S.Container>
-      {jobs.map((job: IDataJob, index: number) => (
+      {jobs.map((job: IJob, index: number) => (
         <JobSection key={index} {...job} />
       ))}
     </S.Container>

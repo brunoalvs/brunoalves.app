@@ -2,12 +2,12 @@ import parse from "html-react-parser"
 import HeadingTitle from "../../Atoms/Typography/HeadingTitle"
 import * as S from "./styles"
 
-type SkillsPageProps = {
+interface SkillsPageProps {
   content: {
     title: string
     skills: {
       title: string
-      text: string[]
+      text: string
       items: string[]
     }[]
   }
@@ -19,9 +19,7 @@ export function SkillsPage({ content }: SkillsPageProps) {
       <HeadingTitle>{parse(content.title)}</HeadingTitle>
       {content.skills.map((skill, index) => (
         <S.Grid key={index}>
-          {skill.text.map((text, index) => (
-            <p key={index}>{parse(text)}</p>
-          ))}
+          <p>{parse(skill.text)}</p>
           <S.List>
             {skill.items.map((item, index) => (
               <li key={index}>{item}</li>

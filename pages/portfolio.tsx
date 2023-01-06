@@ -1,13 +1,10 @@
 import { useContext } from "react"
 import { NextPage } from "next"
-import { data } from "./api/portfolio"
-
-import { LayoutContext } from "../contexts/layout"
-import HeadingTitle from "../components/Atoms/Typography/HeadingTitle"
-import JobList from "../components/Molecules/JobList"
-
-import { Container } from "../styles/page.portfolio"
 import Head from "next/head"
+
+import { PortfolioPage } from "../components/Templates/PortfolioPage"
+import { LayoutContext } from "../contexts/layout"
+import { i18n } from "../i18n"
 
 const Portfolio: NextPage = () => {
   const { language } = useContext(LayoutContext)
@@ -15,14 +12,9 @@ const Portfolio: NextPage = () => {
   return (
     <>
       <Head>
-        <title>
-          {data[language].title} - Bruno Alves | Desenvolvedor Front-End
-        </title>
+        <title>{i18n[language].portfolio.pagetitle}</title>
       </Head>
-      <Container>
-        <HeadingTitle>{data[language].title}</HeadingTitle>
-        <JobList jobs={data[language].jobs} />
-      </Container>
+      <PortfolioPage content={i18n[language].portfolio} />
     </>
   )
 }

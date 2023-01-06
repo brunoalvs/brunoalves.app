@@ -1,0 +1,10 @@
+{
+  "pagetitle": "Início - Bruno Alves | Portfólio de Desenvolvedor Front-End",
+  "title": "Olá, meu nome é <strong>Bruno Alves</strong>.",
+  "subtitle": "Eu desenvolvo sites e aplicativos móveis",
+  "text": "Sou um <strong>Desenvolvedor Front End</strong> brasileiro localizado em Porto, Portugal. Sou focado em desenvolvimento web usando principalmente <strong>React</strong> e <strong>Next.js</strong>. Também estou interessado em construir aplicativos móveis com <strong>React Native</strong> e estou sempre aprendendo e experimentando coisas novas.",
+  "resume": {
+    "title": "LinkedIn",
+    "url": "https://www.linkedin.com/in/bruno-alves-0b1b3b1b3/"
+  }
+}
