@@ -1,12 +1,12 @@
 import Image from "next/image"
-import { IDataJob } from "../../../pages/api/portfolio"
+import type { IJob } from "../../../types/portfolio"
 import { ExternalLink } from "../../Atoms/Typography/ExternalLink"
 import HeadingSubtitle from "../../Atoms/Typography/HeadingSubtitle"
 import Text from "../../Atoms/Typography/Text"
 
 import * as S from "./styles"
 
-const JobSection = ({ title, content, url, urlLabel, image }: IDataJob) => {
+const JobSection = ({ title, content, url, urlLabel, image }: IJob) => {
   return (
     <S.Container>
       <S.Figure>
